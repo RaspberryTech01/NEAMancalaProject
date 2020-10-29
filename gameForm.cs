@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Mancala_NEA_Computer_Science_Project.Resources
+namespace Mancala_NEA_Computer_Science_Project
 {
-    public partial class gameForm : Form
+    public partial class GameForm : Form
     {
-        public gameForm()
+        public GameForm()
         {
             InitializeComponent();
         }

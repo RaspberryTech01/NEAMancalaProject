@@ -16,7 +16,11 @@ namespace Mancala_NEA_Computer_Science_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            //Create a new form1 on startup
+            Form1 form1 = new Form1();
             Application.Run(new Form1());
+           
         }
     }
 }

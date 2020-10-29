@@ -26,15 +26,22 @@ namespace Mancala_NEA_Computer_Science_Project
 
         private async void loginBtn_Click(object sender, EventArgs e)
         {
-            string username = usernameInputField.Text;
-            string password = passwordInputField.Text;
-            var response = await LoginRegisterAsync(username, password, "login");
+            GameForm gameForm = new GameForm();
+            gameForm.Show();
+            string usernameLogin = usernameInputField.Text;
+            string passwordLogin = passwordInputField.Text;
+            var response = await LoginRegisterAsync(usernameLogin, passwordLogin, "login");
             responseField.Text = response;
+            //response.
         }
 
-        private void registerBtn_Click(object sender, EventArgs e)
+        private async void registerBtn_Click(object sender, EventArgs e)
         {
-
+            string usernameRegister  = usernameInputField.Text;
+            string passwordRegister = passwordInputField.Text;
+            var response = await LoginRegisterAsync(usernameRegister, passwordRegister, "register");
+            responseField.Text = response;
+            //GameForm gameForm = gameF
         }
 
         private async Task<string> LoginRegisterAsync(string username, string password, string type)
@@ -48,10 +55,14 @@ namespace Mancala_NEA_Computer_Science_Project
 
             if(type == "login")
             {
-                
-                var contentReturn = await client.GetStringAsync($"https://eu1.sunnahvpn.com:8443/api/login/{username}/{password}");
-
+                //POST REQUEST
+                var response = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/login", content);
+                var responseString = await response.Content.ReadAsStringAsync();
+                //POST END
+                //GET REQUEST
+                var contentReturn = await client.GetStringAsync($"https://eu1.sunnahvpn.com:8888/api/login/{username}/{password}");
                 Console.WriteLine(contentReturn);
+                //GET END
 
                 return contentReturn;
             }
