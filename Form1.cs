@@ -37,7 +37,7 @@ namespace Mancala_NEA_Computer_Science_Project
 
         private async void registerBtn_Click(object sender, EventArgs e)
         {
-            string usernameRegister  = usernameInputField.Text;
+            string usernameRegister = usernameInputField.Text;
             string passwordRegister = passwordInputField.Text;
             var response = await LoginRegisterAsync(usernameRegister, passwordRegister, "register");
             responseField.Text = response;
@@ -47,13 +47,13 @@ namespace Mancala_NEA_Computer_Science_Project
         private async Task<string> LoginRegisterAsync(string username, string password, string type)
         {
             var values = new Dictionary<string, string>
-            { 
+            {
                 { "username", $"{username}" },
                 { "password", $"{password}" }
             };
             var content = new FormUrlEncodedContent(values);
 
-            if(type == "login")
+            if (type == "login")
             {
                 //POST REQUEST
                 var response = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/login", content);
@@ -66,7 +66,7 @@ namespace Mancala_NEA_Computer_Science_Project
 
                 return contentReturn;
             }
-            else if(type == "register")
+            else if (type == "register")
             {
                 var response = await client.PostAsync("http://eu1.sunnahvpn.com:8443/api/register/{username}/{password}", content);
                 var responseString = await response.Content.ReadAsStringAsync();
@@ -75,6 +75,6 @@ namespace Mancala_NEA_Computer_Science_Project
             return "null";
         }
 
-        
+
     }
 }
