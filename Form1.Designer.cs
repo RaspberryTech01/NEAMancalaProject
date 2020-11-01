@@ -90,13 +90,12 @@
             // 
             // responseField
             // 
-            this.responseField.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.responseField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.responseField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.responseField.DetectUrls = false;
-            this.responseField.Enabled = false;
-            this.responseField.Location = new System.Drawing.Point(102, 233);
+            this.responseField.Location = new System.Drawing.Point(12, 233);
             this.responseField.Name = "responseField";
-            this.responseField.Size = new System.Drawing.Size(275, 186);
+            this.responseField.Size = new System.Drawing.Size(455, 186);
             this.responseField.TabIndex = 4;
             this.responseField.Text = "";
             // 

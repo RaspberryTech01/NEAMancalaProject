@@ -57,7 +57,9 @@ namespace Mancala_NEA_Computer_Science_Project
             if (type == "login")
             {
                 var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/login", content);
-                return result.ToString();
+                var RST = await result.Content.ReadAsStringAsync();
+                //string deJsonString = JsonSerializer.Deserialize<serializationResponse>(RST);
+                return RST;
             }
             else if (type == "register")
             {
