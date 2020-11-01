@@ -90,7 +90,7 @@
             // 
             // responseField
             // 
-            this.responseField.BackColor = System.Drawing.Color.DimGray;
+            this.responseField.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.responseField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.responseField.DetectUrls = false;
             this.responseField.Enabled = false;
