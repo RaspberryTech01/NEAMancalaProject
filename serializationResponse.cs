@@ -10,6 +10,8 @@ namespace Mancala_NEA_Computer_Science_Project
     {
         public string wins { get; set; }
         public string losses { get; set; }
+        public string totalScore { get; set; }
+        public string userGameID { get; set; }
         public serializationResponse()
         {
             //this.username = username;
