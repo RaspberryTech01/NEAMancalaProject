@@ -35,7 +35,6 @@ namespace Mancala_NEA_Computer_Science_Project
             string passwordLogin = passwordInputField.Text;
             var response = await LoginRegisterAsync(usernameLogin, passwordLogin, "login");
             responseField.Text = response;
-            //response.
         }
 
         private async void registerBtn_Click(object sender, EventArgs e)
@@ -44,32 +43,29 @@ namespace Mancala_NEA_Computer_Science_Project
             string passwordRegister = passwordInputField.Text;
             var response = await LoginRegisterAsync(usernameRegister, passwordRegister, "register");
             responseField.Text = response;
-            //GameForm gameForm = gameF
         }
 
         private async Task<string> LoginRegisterAsync(string username, string password, string type)
         {
-            serializationAuth serialAuth = new serializationAuth(username, password);
+            serializationAuth serialAuth = new serializationAuth(username, password, "null");
             string jsonString = JsonConvert.SerializeObject(serialAuth);
-            //string jsonString = JsonSerializer.Serialize<serializationAuth>(serialAuth);
             var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
             
 
             if (type == "login")
             {
                 var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/login", content);
-                var RST = await result.Content.ReadAsStringAsync();
-                //string deJsonString = JsonSerializer.Deserialize<serializationResponse>(RST);
-                //dynamic dataResult = 
-                serializationResponse serialRes = new serializationResponse();
-                serializationAuth deserialObj = JsonConvert.DeserializeObject<serializationAuth>(RST);
-                
-                return deserialObj.username;
+                var RString = await result.Content.ReadAsStringAsync();
+                //serializationResponse serialRes = new serializationResponse();
+                serializationAuth deserialObj = JsonConvert.DeserializeObject<serializationAuth>(RString);
+
+                return deserialObj.apiResponse;
             }
             else if (type == "register")
             {
                 var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/register", content);
                 var RST = await result.Content.ReadAsStringAsync();
+
                 return result.ToString();
             }
             return "null";

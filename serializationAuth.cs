@@ -11,10 +11,12 @@ namespace Mancala_NEA_Computer_Science_Project
     {
         public string username { get; set; }
         public string password { get; set; }
-        public serializationAuth(string username, string password)
+        public string apiResponse { get; set; }
+        public serializationAuth(string username, string password, string apiResponse)
         {
             this.username = username;
             this.password = password;
+            this.apiResponse = apiResponse;
         }
 
 
