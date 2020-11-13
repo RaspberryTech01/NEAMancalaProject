@@ -53,6 +53,7 @@
             this.playerTwoAllTimeScoreRTB = new System.Windows.Forms.RichTextBox();
             this.playerTwoWinLossRTB = new System.Windows.Forms.RichTextBox();
             this.playerTwoNameRTB = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -506,12 +507,24 @@
             this.playerTwoNameRTB.TabIndex = 21;
             this.playerTwoNameRTB.Text = "UsernameTwo";
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button1.Location = new System.Drawing.Point(207, 301);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 144);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "button1";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1321, 761);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.playerTwoCurrentScoreRTB);
             this.Controls.Add(this.playerTwoAllTimeScoreRTB);
             this.Controls.Add(this.playerTwoWinLossRTB);
@@ -573,5 +586,6 @@
         private System.Windows.Forms.RichTextBox playerTwoAllTimeScoreRTB;
         private System.Windows.Forms.RichTextBox playerTwoWinLossRTB;
         private System.Windows.Forms.RichTextBox playerTwoNameRTB;
+        private System.Windows.Forms.Button button1;
     }
 }

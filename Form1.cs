@@ -31,9 +31,25 @@ namespace Mancala_NEA_Computer_Science_Project
         {
             //GameForm gameForm = new GameForm();
             //gameForm.Show();
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
             string usernameLogin = usernameInputField.Text;
             string passwordLogin = passwordInputField.Text;
             var response = await LoginRegisterAsync(usernameLogin, passwordLogin, "login");
+            if(response == "Successful")
+            {
+
+            }
+            else
+            {
+                responseField.Text = "Username or Password is incorrect.";
+            }
             responseField.Text = response;
         }
 
