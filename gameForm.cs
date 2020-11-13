@@ -23,7 +23,15 @@ namespace Mancala_NEA_Computer_Science_Project
             playerOneSquareFiveRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerOneSquareSixRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerOneSquareSevenRTB.SelectionAlignment = HorizontalAlignment.Center;
+            //Align Text in boxes for User1 and User2
             playerTwoBankRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerTwoSquareOneRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerTwoSquareTwoRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerTwoSquareThreeRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerTwoSquareFourRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerTwoSquareFiveRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerTwoSquareSixRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerTwoSquareSevenRTB.SelectionAlignment = HorizontalAlignment.Center;
         }
 
         private void bankOneRichTextBox_TextChanged(object sender, EventArgs e)
