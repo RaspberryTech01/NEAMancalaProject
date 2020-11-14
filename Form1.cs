@@ -42,9 +42,10 @@ namespace Mancala_NEA_Computer_Science_Project
             string usernameLogin = usernameInputField.Text;
             string passwordLogin = passwordInputField.Text;
             var response = await LoginRegisterAsync(usernameLogin, passwordLogin, "login");
-            if(response == "Successful")
+            
+            if(response == "true")
             {
-
+                responseField.Text = "logged in";
             }
             else
             {
@@ -63,7 +64,7 @@ namespace Mancala_NEA_Computer_Science_Project
 
         private async Task<string> LoginRegisterAsync(string username, string password, string type)
         {
-            serializationAuth serialAuth = new serializationAuth(username, password, "null");
+            serializationAuth serialAuth = new serializationAuth(username, password);
             string jsonString = JsonConvert.SerializeObject(serialAuth);
             var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
             
@@ -74,15 +75,19 @@ namespace Mancala_NEA_Computer_Science_Project
                 var RString = await result.Content.ReadAsStringAsync();
                 //serializationResponse serialRes = new serializationResponse();
                 serializationAuth deserialObj = JsonConvert.DeserializeObject<serializationAuth>(RString);
-
+                if (deserialObj.apiResponse == "true")
+                {
+                    return "Logged in as: " + username;
+                }
                 return deserialObj.apiResponse;
             }
             else if (type == "register")
             {
                 var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/register", content);
-                var RST = await result.Content.ReadAsStringAsync();
+                var RString = await result.Content.ReadAsStringAsync();
 
-                return result.ToString();
+                serializationAuth deserialObj = JsonConvert.DeserializeObject<serializationAuth>(RString);
+                return deserialObj.userID;
             }
             return "null";
         }
