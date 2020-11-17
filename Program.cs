@@ -20,8 +20,7 @@ namespace Mancala_NEA_Computer_Science_Project
             //Create a new form1 on startup
             Form1 form1 = new Form1();
             Application.Run(new Form1());
-            GameForm gameForm = new GameForm();
-            Application.Run(new GameForm());
+            
         }
     }
 }

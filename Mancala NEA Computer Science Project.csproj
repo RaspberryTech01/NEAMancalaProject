@@ -111,7 +111,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="serializationRegRes.cs" />
     <Compile Include="serializationAuth.cs" />
     <Compile Include="serializationResponse.cs" />
     <EmbeddedResource Include="Form1.resx">

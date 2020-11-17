@@ -33,25 +33,24 @@ namespace Mancala_NEA_Computer_Science_Project
             //gameForm.Show();
             try
             {
+                string usernameLogin = usernameInputField.Text;
+                string passwordLogin = passwordInputField.Text;
+                var response = await LoginRegisterAsync(usernameLogin, passwordLogin, "login");
 
+                if (response == "true")
+                {
+                    responseField.Text = "logged in";
+                }
+                else
+                {
+                    responseField.Text = "Username or Password is incorrect.";
+                }
+                responseField.Text = response;
             }
             catch
             {
-
+                responseField.Text = "An error occurred.";
             }
-            string usernameLogin = usernameInputField.Text;
-            string passwordLogin = passwordInputField.Text;
-            var response = await LoginRegisterAsync(usernameLogin, passwordLogin, "login");
-            
-            if(response == "true")
-            {
-                responseField.Text = "logged in";
-            }
-            else
-            {
-                responseField.Text = "Username or Password is incorrect.";
-            }
-            responseField.Text = response;
         }
 
         private async void registerBtn_Click(object sender, EventArgs e)
@@ -68,18 +67,21 @@ namespace Mancala_NEA_Computer_Science_Project
             string jsonString = JsonConvert.SerializeObject(serialAuth);
             var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
             
-
             if (type == "login")
             {
                 var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/login", content);
                 var RString = await result.Content.ReadAsStringAsync();
-                //serializationResponse serialRes = new serializationResponse();
                 serializationAuth deserialObj = JsonConvert.DeserializeObject<serializationAuth>(RString);
                 if (deserialObj.apiResponse == "true")
                 {
-                    return "Logged in as: " + username;
+                    Hide();
+                    GameForm gameForm = new GameForm(deserialObj.userID, deserialObj.authKey);
+                    gameForm.Show();
                 }
-                return deserialObj.apiResponse;
+                else
+                {
+                    return "Wrong Username or Password";
+                }
             }
             else if (type == "register")
             {
@@ -87,7 +89,14 @@ namespace Mancala_NEA_Computer_Science_Project
                 var RString = await result.Content.ReadAsStringAsync();
 
                 serializationAuth deserialObj = JsonConvert.DeserializeObject<serializationAuth>(RString);
-                return deserialObj.userID;
+                if (deserialObj.apiResponse == "true")
+                {
+
+                }
+                else
+                {
+                    return "Username already exists.";
+                }
             }
             return "null";
         }

@@ -93,6 +93,8 @@
             this.responseField.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.responseField.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.responseField.DetectUrls = false;
+            this.responseField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.responseField.ForeColor = System.Drawing.Color.Red;
             this.responseField.Location = new System.Drawing.Point(12, 233);
             this.responseField.Name = "responseField";
             this.responseField.Size = new System.Drawing.Size(455, 186);

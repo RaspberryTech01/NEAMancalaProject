@@ -12,8 +12,16 @@ namespace Mancala_NEA_Computer_Science_Project
 {
     public partial class GameForm : Form
     {
-        public GameForm()
+        string Username;
+        string Wins;
+        string Losses;
+        string TotalScore;
+        string UserID;
+        string AuthKey;
+        public GameForm(string UserID, string AuthKey)
         {
+            this.UserID = UserID;
+            this.AuthKey = AuthKey;
             InitializeComponent();
             playerOneBankRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerOneSquareOneRTB.SelectionAlignment = HorizontalAlignment.Center;
@@ -35,6 +43,11 @@ namespace Mancala_NEA_Computer_Science_Project
         }
 
         private void bankOneRichTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
