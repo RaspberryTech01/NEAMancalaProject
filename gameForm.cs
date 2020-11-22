@@ -40,6 +40,11 @@ namespace Mancala_NEA_Computer_Science_Project
             playerTwoSquareFiveRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerTwoSquareSixRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerTwoSquareSevenRTB.SelectionAlignment = HorizontalAlignment.Center;
+
+            playerOneButtonOne.FlatStyle = FlatStyle.Flat;
+            playerOneButtonOne.BackColor = Color.Transparent;
+            playerOneButtonOne.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            playerOneButtonOne.FlatAppearance.MouseOverBackColor = Color.Transparent;
         }
 
         private void bankOneRichTextBox_TextChanged(object sender, EventArgs e)
@@ -48,6 +53,31 @@ namespace Mancala_NEA_Computer_Science_Project
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            playerOneSquareTwoRTB.Text = "2";
+        }
+
+        private void playerOneButtonThree_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playerOneButtonFour_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playerOneButtonFive_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playerOneButtonSix_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playerOneButtonSeven_Click(object sender, EventArgs e)
         {
 
         }

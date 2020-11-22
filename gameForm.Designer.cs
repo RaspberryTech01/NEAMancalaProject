@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.playerOneBankRTB = new System.Windows.Forms.RichTextBox();
             this.playerOneSquareOneRTB = new System.Windows.Forms.RichTextBox();
             this.playerOneSquareTwoRTB = new System.Windows.Forms.RichTextBox();
@@ -53,18 +52,23 @@
             this.playerTwoAllTimeScoreRTB = new System.Windows.Forms.RichTextBox();
             this.playerTwoWinLossRTB = new System.Windows.Forms.RichTextBox();
             this.playerTwoNameRTB = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.playerOneButtonOne = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.playerOneButtonTwo = new System.Windows.Forms.Button();
+            this.playerOneButtonThree = new System.Windows.Forms.Button();
+            this.playerOneButtonFour = new System.Windows.Forms.Button();
+            this.playerOneButtonFive = new System.Windows.Forms.Button();
+            this.playerOneButtonSix = new System.Windows.Forms.Button();
+            this.playerOneButtonSeven = new System.Windows.Forms.Button();
+            this.playerTwoButtonSeven = new System.Windows.Forms.Button();
+            this.playerTwoButtonSix = new System.Windows.Forms.Button();
+            this.playerTwoButtonFive = new System.Windows.Forms.Button();
+            this.playerTwoButtonFour = new System.Windows.Forms.Button();
+            this.playerTwoButtonThree = new System.Windows.Forms.Button();
+            this.playerTwoButtonTwo = new System.Windows.Forms.Button();
+            this.playerTwoButtonOne = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Mancala_NEA_Computer_Science_Project.Properties.Resources.gameFormBoard;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 246);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1297, 492);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // playerOneBankRTB
             // 
@@ -311,7 +315,7 @@
             this.playerTwoSquareSevenRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerTwoSquareSevenRTB.DetectUrls = false;
             this.playerTwoSquareSevenRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerTwoSquareSevenRTB.Location = new System.Drawing.Point(1026, 648);
+            this.playerTwoSquareSevenRTB.Location = new System.Drawing.Point(1026, 647);
             this.playerTwoSquareSevenRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareSevenRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareSevenRTB.Multiline = false;
@@ -331,7 +335,7 @@
             this.playerTwoSquareSixRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerTwoSquareSixRTB.DetectUrls = false;
             this.playerTwoSquareSixRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerTwoSquareSixRTB.Location = new System.Drawing.Point(892, 648);
+            this.playerTwoSquareSixRTB.Location = new System.Drawing.Point(892, 647);
             this.playerTwoSquareSixRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareSixRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareSixRTB.Multiline = false;
@@ -351,7 +355,7 @@
             this.playerTwoSquareFiveRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerTwoSquareFiveRTB.DetectUrls = false;
             this.playerTwoSquareFiveRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerTwoSquareFiveRTB.Location = new System.Drawing.Point(758, 648);
+            this.playerTwoSquareFiveRTB.Location = new System.Drawing.Point(758, 647);
             this.playerTwoSquareFiveRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareFiveRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareFiveRTB.Multiline = false;
@@ -371,7 +375,7 @@
             this.playerTwoSquareFourRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerTwoSquareFourRTB.DetectUrls = false;
             this.playerTwoSquareFourRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerTwoSquareFourRTB.Location = new System.Drawing.Point(621, 648);
+            this.playerTwoSquareFourRTB.Location = new System.Drawing.Point(621, 647);
             this.playerTwoSquareFourRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareFourRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareFourRTB.Multiline = false;
@@ -391,7 +395,7 @@
             this.playerTwoSquareThreeRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerTwoSquareThreeRTB.DetectUrls = false;
             this.playerTwoSquareThreeRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerTwoSquareThreeRTB.Location = new System.Drawing.Point(487, 648);
+            this.playerTwoSquareThreeRTB.Location = new System.Drawing.Point(487, 647);
             this.playerTwoSquareThreeRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareThreeRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareThreeRTB.Multiline = false;
@@ -411,7 +415,7 @@
             this.playerTwoSquareTwoRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerTwoSquareTwoRTB.DetectUrls = false;
             this.playerTwoSquareTwoRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerTwoSquareTwoRTB.Location = new System.Drawing.Point(353, 648);
+            this.playerTwoSquareTwoRTB.Location = new System.Drawing.Point(353, 647);
             this.playerTwoSquareTwoRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareTwoRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareTwoRTB.Multiline = false;
@@ -431,7 +435,7 @@
             this.playerTwoSquareOneRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerTwoSquareOneRTB.DetectUrls = false;
             this.playerTwoSquareOneRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerTwoSquareOneRTB.Location = new System.Drawing.Point(219, 648);
+            this.playerTwoSquareOneRTB.Location = new System.Drawing.Point(219, 647);
             this.playerTwoSquareOneRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareOneRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareOneRTB.Multiline = false;
@@ -507,17 +511,244 @@
             this.playerTwoNameRTB.TabIndex = 21;
             this.playerTwoNameRTB.Text = "UsernameTwo";
             // 
-            // button1
+            // playerOneButtonOne
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Location = new System.Drawing.Point(207, 301);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 144);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "button1";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.playerOneButtonOne.BackColor = System.Drawing.Color.Transparent;
+            this.playerOneButtonOne.BackgroundImage = global::Mancala_NEA_Computer_Science_Project.Properties.Resources.mancalaButton;
+            this.playerOneButtonOne.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.playerOneButtonOne.FlatAppearance.BorderSize = 0;
+            this.playerOneButtonOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerOneButtonOne.ForeColor = System.Drawing.Color.Transparent;
+            this.playerOneButtonOne.Location = new System.Drawing.Point(207, 299);
+            this.playerOneButtonOne.Margin = new System.Windows.Forms.Padding(0);
+            this.playerOneButtonOne.Name = "playerOneButtonOne";
+            this.playerOneButtonOne.Size = new System.Drawing.Size(100, 155);
+            this.playerOneButtonOne.TabIndex = 24;
+            this.playerOneButtonOne.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.playerOneButtonOne.UseVisualStyleBackColor = false;
+            this.playerOneButtonOne.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Mancala_NEA_Computer_Science_Project.Properties.Resources.gameFormBoard;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 246);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1297, 492);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // playerOneButtonTwo
+            // 
+            this.playerOneButtonTwo.BackColor = System.Drawing.Color.Transparent;
+            this.playerOneButtonTwo.BackgroundImage = global::Mancala_NEA_Computer_Science_Project.Properties.Resources.mancalaButton;
+            this.playerOneButtonTwo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.playerOneButtonTwo.FlatAppearance.BorderSize = 0;
+            this.playerOneButtonTwo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerOneButtonTwo.ForeColor = System.Drawing.Color.Transparent;
+            this.playerOneButtonTwo.Location = new System.Drawing.Point(343, 299);
+            this.playerOneButtonTwo.Margin = new System.Windows.Forms.Padding(0);
+            this.playerOneButtonTwo.Name = "playerOneButtonTwo";
+            this.playerOneButtonTwo.Size = new System.Drawing.Size(100, 155);
+            this.playerOneButtonTwo.TabIndex = 25;
+            this.playerOneButtonTwo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.playerOneButtonTwo.UseVisualStyleBackColor = false;
+            // 
+            // playerOneButtonThree
+            // 
+            this.playerOneButtonThree.BackColor = System.Drawing.Color.Transparent;
+            this.playerOneButtonThree.BackgroundImage = global::Mancala_NEA_Computer_Science_Project.Properties.Resources.mancalaButton;
+            this.playerOneButtonThree.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.playerOneButtonThree.FlatAppearance.BorderSize = 0;
+            this.playerOneButtonThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerOneButtonThree.ForeColor = System.Drawing.Color.Transparent;
+            this.playerOneButtonThree.Location = new System.Drawing.Point(478, 301);
+            this.playerOneButtonThree.Margin = new System.Windows.Forms.Padding(0);
+            this.playerOneButtonThree.Name = "playerOneButtonThree";
+            this.playerOneButtonThree.Size = new System.Drawing.Size(100, 155);
+            this.playerOneButtonThree.TabIndex = 26;
+            this.playerOneButtonThree.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.playerOneButtonThree.UseVisualStyleBackColor = false;
+            this.playerOneButtonThree.Click += new System.EventHandler(this.playerOneButtonThree_Click);
+            // 
+            // playerOneButtonFour
+            // 
+            this.playerOneButtonFour.BackColor = System.Drawing.Color.Transparent;
+            this.playerOneButtonFour.BackgroundImage = global::Mancala_NEA_Computer_Science_Project.Properties.Resources.mancalaButton;
+            this.playerOneButtonFour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.playerOneButtonFour.FlatAppearance.BorderSize = 0;
+            this.playerOneButtonFour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerOneButtonFour.ForeColor = System.Drawing.Color.Transparent;
+            this.playerOneButtonFour.Location = new System.Drawing.Point(613, 300);
+            this.playerOneButtonFour.Margin = new System.Windows.Forms.Padding(0);
+            this.playerOneButtonFour.Name = "playerOneButtonFour";
+            this.playerOneButtonFour.Size = new System.Drawing.Size(100, 155);
+            this.playerOneButtonFour.TabIndex = 27;
+            this.playerOneButtonFour.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.playerOneButtonFour.UseVisualStyleBackColor = false;
+            this.playerOneButtonFour.Click += new System.EventHandler(this.playerOneButtonFour_Click);
+            // 
+            // playerOneButtonFive
+            // 
+            this.playerOneButtonFive.BackColor = System.Drawing.Color.Transparent;
+            this.playerOneButtonFive.BackgroundImage = global::Mancala_NEA_Computer_Science_Project.Properties.Resources.mancalaButton;
+            this.playerOneButtonFive.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.playerOneButtonFive.FlatAppearance.BorderSize = 0;
+            this.playerOneButtonFive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerOneButtonFive.ForeColor = System.Drawing.Color.Transparent;
+            this.playerOneButtonFive.Location = new System.Drawing.Point(747, 300);
+            this.playerOneButtonFive.Margin = new System.Windows.Forms.Padding(0);
+            this.playerOneButtonFive.Name = "playerOneButtonFive";
+            this.playerOneButtonFive.Size = new System.Drawing.Size(100, 155);
+            this.playerOneButtonFive.TabIndex = 28;
+            this.playerOneButtonFive.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.playerOneButtonFive.UseVisualStyleBackColor = false;
+            this.playerOneButtonFive.Click += new System.EventHandler(this.playerOneButtonFive_Click);
+            // 
+            // playerOneButtonSix
+            // 
+            this.playerOneButtonSix.BackColor = System.Drawing.Color.Transparent;
+            this.playerOneButtonSix.BackgroundImage = global::Mancala_NEA_Computer_Science_Project.Properties.Resources.mancalaButton;
+            this.playerOneButtonSix.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.playerOneButtonSix.FlatAppearance.BorderSize = 0;
+            this.playerOneButtonSix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerOneButtonSix.ForeColor = System.Drawing.Color.Transparent;
+            this.playerOneButtonSix.Location = new System.Drawing.Point(882, 300);
+            this.playerOneButtonSix.Margin = new System.Windows.Forms.Padding(0);
+            this.playerOneButtonSix.Name = "playerOneButtonSix";
+            this.playerOneButtonSix.Size = new System.Drawing.Size(100, 155);
+            this.playerOneButtonSix.TabIndex = 29;
+            this.playerOneButtonSix.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.playerOneButtonSix.UseVisualStyleBackColor = false;
+            this.playerOneButtonSix.Click += new System.EventHandler(this.playerOneButtonSix_Click);
+            // 
+            // playerOneButtonSeven
+            // 
+            this.playerOneButtonSeven.BackColor = System.Drawing.Color.Transparent;
+            this.playerOneButtonSeven.BackgroundImage = global::Mancala_NEA_Computer_Science_Project.Properties.Resources.mancalaButton;
+            this.playerOneButtonSeven.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.playerOneButtonSeven.FlatAppearance.BorderSize = 0;
+            this.playerOneButtonSeven.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerOneButtonSeven.ForeColor = System.Drawing.Color.Transparent;
+            this.playerOneButtonSeven.Location = new System.Drawing.Point(1016, 299);
+            this.playerOneButtonSeven.Margin = new System.Windows.Forms.Padding(0);
+            this.playerOneButtonSeven.Name = "playerOneButtonSeven";
+            this.playerOneButtonSeven.Size = new System.Drawing.Size(100, 155);
+            this.playerOneButtonSeven.TabIndex = 30;
+            this.playerOneButtonSeven.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.playerOneButtonSeven.UseVisualStyleBackColor = false;
+            this.playerOneButtonSeven.Click += new System.EventHandler(this.playerOneButtonSeven_Click);
+            // 
+            // playerTwoButtonSeven
+            // 
+            this.playerTwoButtonSeven.BackColor = System.Drawing.Color.Transparent;
+            this.playerTwoButtonSeven.BackgroundImage = global::Mancala_NEA_Computer_Science_Project.Properties.Resources.mancalaButton;
+            this.playerTwoButtonSeven.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.playerTwoButtonSeven.FlatAppearance.BorderSize = 0;
+            this.playerTwoButtonSeven.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerTwoButtonSeven.ForeColor = System.Drawing.Color.Transparent;
+            this.playerTwoButtonSeven.Location = new System.Drawing.Point(1016, 530);
+            this.playerTwoButtonSeven.Margin = new System.Windows.Forms.Padding(0);
+            this.playerTwoButtonSeven.Name = "playerTwoButtonSeven";
+            this.playerTwoButtonSeven.Size = new System.Drawing.Size(100, 155);
+            this.playerTwoButtonSeven.TabIndex = 37;
+            this.playerTwoButtonSeven.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.playerTwoButtonSeven.UseVisualStyleBackColor = false;
+            // 
+            // playerTwoButtonSix
+            // 
+            this.playerTwoButtonSix.BackColor = System.Drawing.Color.Transparent;
+            this.playerTwoButtonSix.BackgroundImage = global::Mancala_NEA_Computer_Science_Project.Properties.Resources.mancalaButton;
+            this.playerTwoButtonSix.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.playerTwoButtonSix.FlatAppearance.BorderSize = 0;
+            this.playerTwoButtonSix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerTwoButtonSix.ForeColor = System.Drawing.Color.Transparent;
+            this.playerTwoButtonSix.Location = new System.Drawing.Point(882, 531);
+            this.playerTwoButtonSix.Margin = new System.Windows.Forms.Padding(0);
+            this.playerTwoButtonSix.Name = "playerTwoButtonSix";
+            this.playerTwoButtonSix.Size = new System.Drawing.Size(100, 155);
+            this.playerTwoButtonSix.TabIndex = 36;
+            this.playerTwoButtonSix.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.playerTwoButtonSix.UseVisualStyleBackColor = false;
+            // 
+            // playerTwoButtonFive
+            // 
+            this.playerTwoButtonFive.BackColor = System.Drawing.Color.Transparent;
+            this.playerTwoButtonFive.BackgroundImage = global::Mancala_NEA_Computer_Science_Project.Properties.Resources.mancalaButton;
+            this.playerTwoButtonFive.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.playerTwoButtonFive.FlatAppearance.BorderSize = 0;
+            this.playerTwoButtonFive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerTwoButtonFive.ForeColor = System.Drawing.Color.Transparent;
+            this.playerTwoButtonFive.Location = new System.Drawing.Point(747, 531);
+            this.playerTwoButtonFive.Margin = new System.Windows.Forms.Padding(0);
+            this.playerTwoButtonFive.Name = "playerTwoButtonFive";
+            this.playerTwoButtonFive.Size = new System.Drawing.Size(100, 155);
+            this.playerTwoButtonFive.TabIndex = 35;
+            this.playerTwoButtonFive.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.playerTwoButtonFive.UseVisualStyleBackColor = false;
+            // 
+            // playerTwoButtonFour
+            // 
+            this.playerTwoButtonFour.BackColor = System.Drawing.Color.Transparent;
+            this.playerTwoButtonFour.BackgroundImage = global::Mancala_NEA_Computer_Science_Project.Properties.Resources.mancalaButton;
+            this.playerTwoButtonFour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.playerTwoButtonFour.FlatAppearance.BorderSize = 0;
+            this.playerTwoButtonFour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerTwoButtonFour.ForeColor = System.Drawing.Color.Transparent;
+            this.playerTwoButtonFour.Location = new System.Drawing.Point(613, 531);
+            this.playerTwoButtonFour.Margin = new System.Windows.Forms.Padding(0);
+            this.playerTwoButtonFour.Name = "playerTwoButtonFour";
+            this.playerTwoButtonFour.Size = new System.Drawing.Size(100, 155);
+            this.playerTwoButtonFour.TabIndex = 34;
+            this.playerTwoButtonFour.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.playerTwoButtonFour.UseVisualStyleBackColor = false;
+            // 
+            // playerTwoButtonThree
+            // 
+            this.playerTwoButtonThree.BackColor = System.Drawing.Color.Transparent;
+            this.playerTwoButtonThree.BackgroundImage = global::Mancala_NEA_Computer_Science_Project.Properties.Resources.mancalaButton;
+            this.playerTwoButtonThree.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.playerTwoButtonThree.FlatAppearance.BorderSize = 0;
+            this.playerTwoButtonThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerTwoButtonThree.ForeColor = System.Drawing.Color.Transparent;
+            this.playerTwoButtonThree.Location = new System.Drawing.Point(478, 532);
+            this.playerTwoButtonThree.Margin = new System.Windows.Forms.Padding(0);
+            this.playerTwoButtonThree.Name = "playerTwoButtonThree";
+            this.playerTwoButtonThree.Size = new System.Drawing.Size(100, 155);
+            this.playerTwoButtonThree.TabIndex = 33;
+            this.playerTwoButtonThree.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.playerTwoButtonThree.UseVisualStyleBackColor = false;
+            // 
+            // playerTwoButtonTwo
+            // 
+            this.playerTwoButtonTwo.BackColor = System.Drawing.Color.Transparent;
+            this.playerTwoButtonTwo.BackgroundImage = global::Mancala_NEA_Computer_Science_Project.Properties.Resources.mancalaButton;
+            this.playerTwoButtonTwo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.playerTwoButtonTwo.FlatAppearance.BorderSize = 0;
+            this.playerTwoButtonTwo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerTwoButtonTwo.ForeColor = System.Drawing.Color.Transparent;
+            this.playerTwoButtonTwo.Location = new System.Drawing.Point(343, 530);
+            this.playerTwoButtonTwo.Margin = new System.Windows.Forms.Padding(0);
+            this.playerTwoButtonTwo.Name = "playerTwoButtonTwo";
+            this.playerTwoButtonTwo.Size = new System.Drawing.Size(100, 155);
+            this.playerTwoButtonTwo.TabIndex = 32;
+            this.playerTwoButtonTwo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.playerTwoButtonTwo.UseVisualStyleBackColor = false;
+            // 
+            // playerTwoButtonOne
+            // 
+            this.playerTwoButtonOne.BackColor = System.Drawing.Color.Transparent;
+            this.playerTwoButtonOne.BackgroundImage = global::Mancala_NEA_Computer_Science_Project.Properties.Resources.mancalaButton;
+            this.playerTwoButtonOne.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.playerTwoButtonOne.FlatAppearance.BorderSize = 0;
+            this.playerTwoButtonOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerTwoButtonOne.ForeColor = System.Drawing.Color.Transparent;
+            this.playerTwoButtonOne.Location = new System.Drawing.Point(207, 530);
+            this.playerTwoButtonOne.Margin = new System.Windows.Forms.Padding(0);
+            this.playerTwoButtonOne.Name = "playerTwoButtonOne";
+            this.playerTwoButtonOne.Size = new System.Drawing.Size(100, 155);
+            this.playerTwoButtonOne.TabIndex = 31;
+            this.playerTwoButtonOne.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.playerTwoButtonOne.UseVisualStyleBackColor = false;
             // 
             // GameForm
             // 
@@ -525,11 +756,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1321, 761);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.playerTwoCurrentScoreRTB);
-            this.Controls.Add(this.playerTwoAllTimeScoreRTB);
-            this.Controls.Add(this.playerTwoWinLossRTB);
-            this.Controls.Add(this.playerTwoNameRTB);
             this.Controls.Add(this.playerTwoSquareSevenRTB);
             this.Controls.Add(this.playerTwoSquareSixRTB);
             this.Controls.Add(this.playerTwoSquareFiveRTB);
@@ -537,19 +763,37 @@
             this.Controls.Add(this.playerTwoSquareThreeRTB);
             this.Controls.Add(this.playerTwoSquareTwoRTB);
             this.Controls.Add(this.playerTwoSquareOneRTB);
+            this.Controls.Add(this.playerTwoButtonSeven);
+            this.Controls.Add(this.playerTwoButtonSix);
+            this.Controls.Add(this.playerTwoButtonFive);
+            this.Controls.Add(this.playerTwoButtonFour);
+            this.Controls.Add(this.playerTwoButtonThree);
+            this.Controls.Add(this.playerTwoButtonTwo);
+            this.Controls.Add(this.playerTwoButtonOne);
+            this.Controls.Add(this.playerOneSquareSevenRTB);
+            this.Controls.Add(this.playerOneButtonSeven);
+            this.Controls.Add(this.playerOneSquareSixRTB);
+            this.Controls.Add(this.playerOneButtonSix);
+            this.Controls.Add(this.playerOneSquareFiveRTB);
+            this.Controls.Add(this.playerOneButtonFive);
+            this.Controls.Add(this.playerOneSquareFourRTB);
+            this.Controls.Add(this.playerOneButtonFour);
+            this.Controls.Add(this.playerOneSquareThreeRTB);
+            this.Controls.Add(this.playerOneButtonThree);
+            this.Controls.Add(this.playerOneSquareTwoRTB);
+            this.Controls.Add(this.playerOneButtonTwo);
+            this.Controls.Add(this.playerTwoCurrentScoreRTB);
+            this.Controls.Add(this.playerTwoAllTimeScoreRTB);
+            this.Controls.Add(this.playerTwoWinLossRTB);
+            this.Controls.Add(this.playerTwoNameRTB);
             this.Controls.Add(this.playerOneCurrentScoreRTB);
             this.Controls.Add(this.playerOneAllTimeScoreRTB);
             this.Controls.Add(this.playerOneWinLossRTB);
             this.Controls.Add(this.playerOneNameRTB);
             this.Controls.Add(this.playerTwoBankRTB);
-            this.Controls.Add(this.playerOneSquareSevenRTB);
-            this.Controls.Add(this.playerOneSquareSixRTB);
-            this.Controls.Add(this.playerOneSquareFiveRTB);
-            this.Controls.Add(this.playerOneSquareFourRTB);
-            this.Controls.Add(this.playerOneSquareThreeRTB);
-            this.Controls.Add(this.playerOneSquareTwoRTB);
             this.Controls.Add(this.playerOneSquareOneRTB);
             this.Controls.Add(this.playerOneBankRTB);
+            this.Controls.Add(this.playerOneButtonOne);
             this.Controls.Add(this.pictureBox1);
             this.MaximumSize = new System.Drawing.Size(1337, 800);
             this.MinimumSize = new System.Drawing.Size(1337, 800);
@@ -587,6 +831,19 @@
         private System.Windows.Forms.RichTextBox playerTwoAllTimeScoreRTB;
         private System.Windows.Forms.RichTextBox playerTwoWinLossRTB;
         private System.Windows.Forms.RichTextBox playerTwoNameRTB;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button playerOneButtonOne;
+        private System.Windows.Forms.Button playerOneButtonTwo;
+        private System.Windows.Forms.Button playerOneButtonThree;
+        private System.Windows.Forms.Button playerOneButtonFour;
+        private System.Windows.Forms.Button playerOneButtonFive;
+        private System.Windows.Forms.Button playerOneButtonSix;
+        private System.Windows.Forms.Button playerOneButtonSeven;
+        private System.Windows.Forms.Button playerTwoButtonSeven;
+        private System.Windows.Forms.Button playerTwoButtonSix;
+        private System.Windows.Forms.Button playerTwoButtonFive;
+        private System.Windows.Forms.Button playerTwoButtonFour;
+        private System.Windows.Forms.Button playerTwoButtonThree;
+        private System.Windows.Forms.Button playerTwoButtonTwo;
+        private System.Windows.Forms.Button playerTwoButtonOne;
     }
 }

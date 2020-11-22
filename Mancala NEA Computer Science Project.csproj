@@ -141,6 +141,7 @@
   <ItemGroup>
     <None Include="Resources\gameFormBoard.png" />
     <Content Include="Resources\gameFormBoard.svg" />
+    <Content Include="Resources\mancalaButton.png" />
     <Content Include="Resources\rockBlue.png" />
     <Content Include="Resources\rockGreen.png" />
     <Content Include="Resources\rockPurple.png" />
