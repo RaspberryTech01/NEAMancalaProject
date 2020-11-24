@@ -9,16 +9,18 @@ namespace Mancala_NEA_Computer_Science_Project
 {
     public class serializationAuth
     {
-        public string username { get; set; }
-        public string password { get; set; }
-        public string apiResponse { get; set; }
-        public string userID { get; set; }
-        public string authKey { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string ApiResponse { get; set; }
+        public string UserID { get; set; }
+        public string AuthKey { get; set; }
+        public string Wins { get; set; }
+        public string Losses { get; set; }
+        public string TotalScore { get; set; }
         public serializationAuth(string username, string password)
         {
-            this.username = username;
-            this.password = password;
-           
+            this.Username = username;
+            this.Password = password;
         }
 
 

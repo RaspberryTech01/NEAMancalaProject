@@ -50,7 +50,6 @@
             this.playerTwoSquareOneRTB = new System.Windows.Forms.RichTextBox();
             this.playerTwoCurrentScoreRTB = new System.Windows.Forms.RichTextBox();
             this.playerTwoAllTimeScoreRTB = new System.Windows.Forms.RichTextBox();
-            this.playerTwoWinLossRTB = new System.Windows.Forms.RichTextBox();
             this.playerTwoNameRTB = new System.Windows.Forms.RichTextBox();
             this.playerOneButtonOne = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -67,6 +66,10 @@
             this.playerTwoButtonThree = new System.Windows.Forms.Button();
             this.playerTwoButtonTwo = new System.Windows.Forms.Button();
             this.playerTwoButtonOne = new System.Windows.Forms.Button();
+            this.playerTwoWinLossRTB = new System.Windows.Forms.RichTextBox();
+            this.usernameOneRTBU = new System.Windows.Forms.RichTextBox();
+            this.userOneRTBAllTime = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -270,14 +273,14 @@
             this.playerOneWinLossRTB.DetectUrls = false;
             this.playerOneWinLossRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerOneWinLossRTB.HideSelection = false;
-            this.playerOneWinLossRTB.Location = new System.Drawing.Point(12, 42);
+            this.playerOneWinLossRTB.Location = new System.Drawing.Point(128, 42);
             this.playerOneWinLossRTB.Multiline = false;
             this.playerOneWinLossRTB.Name = "playerOneWinLossRTB";
             this.playerOneWinLossRTB.ReadOnly = true;
             this.playerOneWinLossRTB.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.playerOneWinLossRTB.Size = new System.Drawing.Size(181, 24);
+            this.playerOneWinLossRTB.Size = new System.Drawing.Size(65, 24);
             this.playerOneWinLossRTB.TabIndex = 10;
-            this.playerOneWinLossRTB.Text = "Win/Loss: 0.67";
+            this.playerOneWinLossRTB.Text = "0.67";
             // 
             // playerOneAllTimeScoreRTB
             // 
@@ -285,14 +288,14 @@
             this.playerOneAllTimeScoreRTB.DetectUrls = false;
             this.playerOneAllTimeScoreRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerOneAllTimeScoreRTB.HideSelection = false;
-            this.playerOneAllTimeScoreRTB.Location = new System.Drawing.Point(12, 72);
+            this.playerOneAllTimeScoreRTB.Location = new System.Drawing.Point(128, 72);
             this.playerOneAllTimeScoreRTB.Multiline = false;
             this.playerOneAllTimeScoreRTB.Name = "playerOneAllTimeScoreRTB";
             this.playerOneAllTimeScoreRTB.ReadOnly = true;
             this.playerOneAllTimeScoreRTB.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.playerOneAllTimeScoreRTB.Size = new System.Drawing.Size(181, 24);
+            this.playerOneAllTimeScoreRTB.Size = new System.Drawing.Size(65, 24);
             this.playerOneAllTimeScoreRTB.TabIndex = 11;
-            this.playerOneAllTimeScoreRTB.Text = "All Time Score: 71";
+            this.playerOneAllTimeScoreRTB.Text = "71";
             // 
             // playerOneCurrentScoreRTB
             // 
@@ -300,14 +303,14 @@
             this.playerOneCurrentScoreRTB.DetectUrls = false;
             this.playerOneCurrentScoreRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerOneCurrentScoreRTB.HideSelection = false;
-            this.playerOneCurrentScoreRTB.Location = new System.Drawing.Point(12, 102);
+            this.playerOneCurrentScoreRTB.Location = new System.Drawing.Point(128, 102);
             this.playerOneCurrentScoreRTB.Multiline = false;
             this.playerOneCurrentScoreRTB.Name = "playerOneCurrentScoreRTB";
             this.playerOneCurrentScoreRTB.ReadOnly = true;
             this.playerOneCurrentScoreRTB.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.playerOneCurrentScoreRTB.Size = new System.Drawing.Size(181, 24);
+            this.playerOneCurrentScoreRTB.Size = new System.Drawing.Size(65, 24);
             this.playerOneCurrentScoreRTB.TabIndex = 12;
-            this.playerOneCurrentScoreRTB.Text = "Current Score: 8";
+            this.playerOneCurrentScoreRTB.Text = "8";
             // 
             // playerTwoSquareSevenRTB
             // 
@@ -480,22 +483,7 @@
             this.playerTwoAllTimeScoreRTB.Size = new System.Drawing.Size(181, 24);
             this.playerTwoAllTimeScoreRTB.TabIndex = 22;
             this.playerTwoAllTimeScoreRTB.Text = "All Time Score: 71";
-            // 
-            // playerTwoWinLossRTB
-            // 
-            this.playerTwoWinLossRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.playerTwoWinLossRTB.DetectUrls = false;
-            this.playerTwoWinLossRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerTwoWinLossRTB.HideSelection = false;
-            this.playerTwoWinLossRTB.Location = new System.Drawing.Point(1128, 42);
-            this.playerTwoWinLossRTB.Multiline = false;
-            this.playerTwoWinLossRTB.Name = "playerTwoWinLossRTB";
-            this.playerTwoWinLossRTB.ReadOnly = true;
-            this.playerTwoWinLossRTB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.playerTwoWinLossRTB.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.playerTwoWinLossRTB.Size = new System.Drawing.Size(181, 24);
-            this.playerTwoWinLossRTB.TabIndex = 20;
-            this.playerTwoWinLossRTB.Text = "Win/Loss: 0.67";
+            this.playerTwoAllTimeScoreRTB.Visible = false;
             // 
             // playerTwoNameRTB
             // 
@@ -509,7 +497,7 @@
             this.playerTwoNameRTB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.playerTwoNameRTB.Size = new System.Drawing.Size(181, 24);
             this.playerTwoNameRTB.TabIndex = 21;
-            this.playerTwoNameRTB.Text = "UsernameTwo";
+            this.playerTwoNameRTB.Text = "AI";
             // 
             // playerOneButtonOne
             // 
@@ -750,12 +738,74 @@
             this.playerTwoButtonOne.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.playerTwoButtonOne.UseVisualStyleBackColor = false;
             // 
+            // playerTwoWinLossRTB
+            // 
+            this.playerTwoWinLossRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.playerTwoWinLossRTB.DetectUrls = false;
+            this.playerTwoWinLossRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerTwoWinLossRTB.HideSelection = false;
+            this.playerTwoWinLossRTB.Location = new System.Drawing.Point(1128, 42);
+            this.playerTwoWinLossRTB.Multiline = false;
+            this.playerTwoWinLossRTB.Name = "playerTwoWinLossRTB";
+            this.playerTwoWinLossRTB.ReadOnly = true;
+            this.playerTwoWinLossRTB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.playerTwoWinLossRTB.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
+            this.playerTwoWinLossRTB.Size = new System.Drawing.Size(181, 24);
+            this.playerTwoWinLossRTB.TabIndex = 20;
+            this.playerTwoWinLossRTB.Text = "Win/Loss: 0.67";
+            this.playerTwoWinLossRTB.Visible = false;
+            // 
+            // usernameOneRTBU
+            // 
+            this.usernameOneRTBU.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.usernameOneRTBU.DetectUrls = false;
+            this.usernameOneRTBU.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.usernameOneRTBU.HideSelection = false;
+            this.usernameOneRTBU.Location = new System.Drawing.Point(12, 41);
+            this.usernameOneRTBU.Multiline = false;
+            this.usernameOneRTBU.Name = "usernameOneRTBU";
+            this.usernameOneRTBU.ReadOnly = true;
+            this.usernameOneRTBU.Size = new System.Drawing.Size(110, 24);
+            this.usernameOneRTBU.TabIndex = 38;
+            this.usernameOneRTBU.Text = "Win To Loss:";
+            // 
+            // userOneRTBAllTime
+            // 
+            this.userOneRTBAllTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.userOneRTBAllTime.DetectUrls = false;
+            this.userOneRTBAllTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.userOneRTBAllTime.HideSelection = false;
+            this.userOneRTBAllTime.Location = new System.Drawing.Point(12, 71);
+            this.userOneRTBAllTime.Multiline = false;
+            this.userOneRTBAllTime.Name = "userOneRTBAllTime";
+            this.userOneRTBAllTime.ReadOnly = true;
+            this.userOneRTBAllTime.Size = new System.Drawing.Size(110, 24);
+            this.userOneRTBAllTime.TabIndex = 39;
+            this.userOneRTBAllTime.Text = "All Time Score:";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.DetectUrls = false;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.richTextBox1.HideSelection = false;
+            this.richTextBox1.Location = new System.Drawing.Point(12, 101);
+            this.richTextBox1.Multiline = false;
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(110, 24);
+            this.richTextBox1.TabIndex = 40;
+            this.richTextBox1.Text = "Current Score:";
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1321, 761);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.userOneRTBAllTime);
+            this.Controls.Add(this.usernameOneRTBU);
             this.Controls.Add(this.playerTwoSquareSevenRTB);
             this.Controls.Add(this.playerTwoSquareSixRTB);
             this.Controls.Add(this.playerTwoSquareFiveRTB);
@@ -829,7 +879,6 @@
         private System.Windows.Forms.RichTextBox playerTwoSquareOneRTB;
         private System.Windows.Forms.RichTextBox playerTwoCurrentScoreRTB;
         private System.Windows.Forms.RichTextBox playerTwoAllTimeScoreRTB;
-        private System.Windows.Forms.RichTextBox playerTwoWinLossRTB;
         private System.Windows.Forms.RichTextBox playerTwoNameRTB;
         private System.Windows.Forms.Button playerOneButtonOne;
         private System.Windows.Forms.Button playerOneButtonTwo;
@@ -845,5 +894,9 @@
         private System.Windows.Forms.Button playerTwoButtonThree;
         private System.Windows.Forms.Button playerTwoButtonTwo;
         private System.Windows.Forms.Button playerTwoButtonOne;
+        private System.Windows.Forms.RichTextBox playerTwoWinLossRTB;
+        private System.Windows.Forms.RichTextBox usernameOneRTBU;
+        private System.Windows.Forms.RichTextBox userOneRTBAllTime;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

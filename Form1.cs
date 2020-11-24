@@ -55,10 +55,26 @@ namespace Mancala_NEA_Computer_Science_Project
 
         private async void registerBtn_Click(object sender, EventArgs e)
         {
-            string usernameRegister = usernameInputField.Text;
-            string passwordRegister = passwordInputField.Text;
-            var response = await LoginRegisterAsync(usernameRegister, passwordRegister, "register");
-            responseField.Text = response;
+            
+            try
+            {
+                string usernameRegister = usernameInputField.Text;
+                string passwordRegister = passwordInputField.Text;
+                var response = await LoginRegisterAsync(usernameRegister, passwordRegister, "register");
+                if (response == "true")
+                {
+                    responseField.Text = "Registered";
+                }
+                else
+                {
+                    responseField.Text = "User is already registered";
+                }
+                responseField.Text = response;
+            }
+            catch
+            {
+                responseField.Text = "An error occurred.";
+            }
         }
 
         private async Task<string> LoginRegisterAsync(string username, string password, string type)
@@ -72,10 +88,10 @@ namespace Mancala_NEA_Computer_Science_Project
                 var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/login", content);
                 var RString = await result.Content.ReadAsStringAsync();
                 serializationAuth deserialObj = JsonConvert.DeserializeObject<serializationAuth>(RString);
-                if (deserialObj.apiResponse == "true")
+                if (deserialObj.ApiResponse == "true")
                 {
                     Hide();
-                    GameForm gameForm = new GameForm(deserialObj.userID, deserialObj.authKey);
+                    GameForm gameForm = new GameForm(deserialObj.UserID, username, deserialObj.AuthKey, deserialObj.Wins, deserialObj.Losses, deserialObj.TotalScore);
                     gameForm.Show();
                 }
                 else
@@ -89,7 +105,7 @@ namespace Mancala_NEA_Computer_Science_Project
                 var RString = await result.Content.ReadAsStringAsync();
 
                 serializationAuth deserialObj = JsonConvert.DeserializeObject<serializationAuth>(RString);
-                if (deserialObj.apiResponse == "true")
+                if (deserialObj.ApiResponse == "true")
                 {
 
                 }
