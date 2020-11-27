@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
-//using System.Text.Json;
 using Newtonsoft.Json;
 
 namespace Mancala_NEA_Computer_Science_Project
@@ -102,9 +101,9 @@ namespace Mancala_NEA_Computer_Science_Project
             else if (type == "register")
             {
                 var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/register", content);
-                var RString = await result.Content.ReadAsStringAsync();
+                var rString = await result.Content.ReadAsStringAsync();
 
-                serializationAuth deserialObj = JsonConvert.DeserializeObject<serializationAuth>(RString);
+                serializationAuth deserialObj = JsonConvert.DeserializeObject<serializationAuth>(rString);
                 if (deserialObj.ApiResponse == "true")
                 {
 
