@@ -22,10 +22,11 @@ public class userPoints
 		this.Username = Username;
 	}
 
-	private async Task<string> GetSavedData(string username, string authKey)
-    {
-		serializationGetInfo serialGetInfo = new serializationGetInfo(authKey);
-		string jsonString = JsonConvert.SerializeObject(serialAuth);
-		var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
-	}
+	//private async Task<string> GetSavedData(string username, string authKey)
+ //   {
+	//	serializationGetInfo serialGetInfo = new serializationGetInfo(authKey);
+	//	string jsonString = JsonConvert.SerializeObject(serialAuth);
+	//	var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+	//	return content;
+	//}
 }

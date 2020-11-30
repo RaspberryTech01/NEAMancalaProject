@@ -112,7 +112,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="serializationAuth.cs" />
+    <Compile Include="serializationGetInfo.cs" />
     <Compile Include="serializationResponse.cs" />
+    <Compile Include="userPoints.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
