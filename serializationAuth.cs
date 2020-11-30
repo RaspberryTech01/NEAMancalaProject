@@ -17,10 +17,13 @@ namespace Mancala_NEA_Computer_Science_Project
         public string Wins { get; set; }
         public string Losses { get; set; }
         public string TotalScore { get; set; }
-        public serializationAuth(string Username, string Password)
+        public serializationAuth(string username, string password)
         {
-            this.Username = Username;
-            this.Password = Password;
+            this.Username = username;
+            this.Password = password;
         }
+
+
     }
+    
 }
