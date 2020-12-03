@@ -18,6 +18,8 @@ namespace Mancala_NEA_Computer_Science_Project
         string TotalScore;
         string UserID;
         string AuthKey;
+
+        bool gameStarted = false;
         public GameForm(string UserID, string Username, string AuthKey, string Wins, string Losses, string TotalScore)
         {
             this.UserID = UserID;
@@ -27,7 +29,7 @@ namespace Mancala_NEA_Computer_Science_Project
             this.Losses = Losses;
             this.TotalScore = TotalScore;
             InitializeComponent();
-            centreItems();
+            CentreItems();
             setupUser(this.Username, this.Wins, this.Losses, this.TotalScore);
             
         }
@@ -40,9 +42,19 @@ namespace Mancala_NEA_Computer_Science_Project
         private void button1_Click(object sender, EventArgs e)
         {
             playerOneSquareTwoRTB.Text = Wins + Losses;
-            centreItems();
+            CentreItems();
         }
+        private void playerOneButtonTwo_Click(object sender, EventArgs e)
+        {
+            if (gameStarted)
+            {
 
+            }
+            else
+            {
+                
+            }
+        }
         private void playerOneButtonThree_Click(object sender, EventArgs e)
         {
 
@@ -68,26 +80,7 @@ namespace Mancala_NEA_Computer_Science_Project
 
         }
 
-        private void centreItems()
-        {
-            playerOneBankRTB.SelectionAlignment = HorizontalAlignment.Center;
-            playerOneSquareOneRTB.SelectionAlignment = HorizontalAlignment.Center;
-            playerOneSquareTwoRTB.SelectionAlignment = HorizontalAlignment.Center;
-            playerOneSquareThreeRTB.SelectionAlignment = HorizontalAlignment.Center;
-            playerOneSquareFourRTB.SelectionAlignment = HorizontalAlignment.Center;
-            playerOneSquareFiveRTB.SelectionAlignment = HorizontalAlignment.Center;
-            playerOneSquareSixRTB.SelectionAlignment = HorizontalAlignment.Center;
-            playerOneSquareSevenRTB.SelectionAlignment = HorizontalAlignment.Center;
-            //Align Text in boxes for User1 and User2
-            playerTwoBankRTB.SelectionAlignment = HorizontalAlignment.Center;
-            playerTwoSquareOneRTB.SelectionAlignment = HorizontalAlignment.Center;
-            playerTwoSquareTwoRTB.SelectionAlignment = HorizontalAlignment.Center;
-            playerTwoSquareThreeRTB.SelectionAlignment = HorizontalAlignment.Center;
-            playerTwoSquareFourRTB.SelectionAlignment = HorizontalAlignment.Center;
-            playerTwoSquareFiveRTB.SelectionAlignment = HorizontalAlignment.Center;
-            playerTwoSquareSixRTB.SelectionAlignment = HorizontalAlignment.Center;
-            playerTwoSquareSevenRTB.SelectionAlignment = HorizontalAlignment.Center;
-        }
+        
         private void setupUser(string Username, string Wins, string Losses, string TotalScore)
         {
             try
@@ -121,5 +114,53 @@ namespace Mancala_NEA_Computer_Science_Project
             };
             
         }
+       
+        private void rulesBtn_Click(object sender, EventArgs e)
+        {
+            RulesForm rulesForm = new RulesForm();
+            rulesForm.Show();
+        }
+
+        private void newGameBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void savedGameBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void CentreItems()
+        {
+            playerOneBankRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerOneSquareOneRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerOneSquareTwoRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerOneSquareThreeRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerOneSquareFourRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerOneSquareFiveRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerOneSquareSixRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerOneSquareSevenRTB.SelectionAlignment = HorizontalAlignment.Center;
+            //Align Text in boxes for User1 and User2
+            playerTwoBankRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerTwoSquareOneRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerTwoSquareTwoRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerTwoSquareThreeRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerTwoSquareFourRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerTwoSquareFiveRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerTwoSquareSixRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerTwoSquareSevenRTB.SelectionAlignment = HorizontalAlignment.Center;
+        }
+        public void NewGame() //starts new game, sets points to 0.
+        {
+            int[] scoreSetup = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
+            UserPoints userOnePoints = new UserPoints(scoreSetup);
+            UserPoints userTwoPoints = new UserPoints(scoreSetup);
+        }
+        
+        public void RefreshBoard()
+        {
+
+        }
+        
     }
 }

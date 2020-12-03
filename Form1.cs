@@ -78,42 +78,49 @@ namespace Mancala_NEA_Computer_Science_Project
 
         private async Task<string> LoginRegisterAsync(string username, string password, string type)
         {
-            serializationAuth serialAuth = new serializationAuth(username, password);
-            string jsonString = JsonConvert.SerializeObject(serialAuth);
-            var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            
-            if (type == "login")
+            try
             {
-                var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/login", content);
-                var RString = await result.Content.ReadAsStringAsync();
-                serializationAuth deserialObj = JsonConvert.DeserializeObject<serializationAuth>(RString);
-                if (deserialObj.ApiResponse == "true")
+                SerializationAuth serialAuth = new SerializationAuth(username, password);
+                string jsonString = JsonConvert.SerializeObject(serialAuth);
+                var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+                if (type == "login")
                 {
-                    Hide();
-                    GameForm gameForm = new GameForm(deserialObj.UserID, username, deserialObj.AuthKey, deserialObj.Wins, deserialObj.Losses, deserialObj.TotalScore);
-                    gameForm.Show();
+                    var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/login", content);
+                    var RString = await result.Content.ReadAsStringAsync();
+                    SerializationAuth deserialObj = JsonConvert.DeserializeObject<SerializationAuth>(RString);
+                    if (deserialObj.ApiResponse == "true")
+                    {
+                        Hide();
+                        GameForm gameForm = new GameForm(deserialObj.UserID, username, deserialObj.AuthKey, deserialObj.Wins, deserialObj.Losses, deserialObj.TotalScore);
+                        gameForm.Show();
+                    }
+                    else
+                    {
+                        return "Wrong Username or Password";
+                    }
                 }
-                else
+                else if (type == "register")
                 {
-                    return "Wrong Username or Password";
+                    var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/register", content);
+                    var rString = await result.Content.ReadAsStringAsync();
+
+                    SerializationAuth deserialObj = JsonConvert.DeserializeObject<SerializationAuth>(rString);
+                    if (deserialObj.ApiResponse == "true")
+                    {
+
+                    }
+                    else
+                    {
+                        return "Username already exists.";
+                    }
                 }
+                return "null";
             }
-            else if (type == "register")
+            catch (Exception)
             {
-                var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/register", content);
-                var rString = await result.Content.ReadAsStringAsync();
-
-                serializationAuth deserialObj = JsonConvert.DeserializeObject<serializationAuth>(rString);
-                if (deserialObj.ApiResponse == "true")
-                {
-
-                }
-                else
-                {
-                    return "Username already exists.";
-                }
+                return "An internal error occurred";
             }
-            return "null";
         }
 
 

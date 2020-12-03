@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mancala_NEA_Computer_Science_Project
 {
-    public class serializationAuth
+    public class SerializationAuth
     {
         public string Username { get; set; }
         public string Password { get; set; }
@@ -17,7 +17,7 @@ namespace Mancala_NEA_Computer_Science_Project
         public string Wins { get; set; }
         public string Losses { get; set; }
         public string TotalScore { get; set; }
-        public serializationAuth(string Username, string Password)
+        public SerializationAuth(string Username, string Password)
         {
             this.Username = Username;
             this.Password = Password;

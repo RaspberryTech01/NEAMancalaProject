@@ -10,23 +10,23 @@ using System.Windows.Forms;
 using System.Net.Http;
 using Newtonsoft.Json;
 
-public class userPoints
+public class UserPoints
 {
+	
 	private int[] UserScores = new int[8];
-	private string AuthKey;
-	private string Username;
-	public userPoints(int[] Scores, string AuthKey, string Username)
+	
+	public UserPoints(int[] Scores)
 	{
-		this.UserScores = Scores;
-		this.AuthKey = AuthKey;
-		this.Username = Username;
+        try
+        {
+			this.UserScores = Scores;
+		}
+        catch (Exception)
+        {
+
+        }
+		
 	}
 
-	//private async Task<string> GetSavedData(string username, string authKey)
- //   {
-	//	serializationGetInfo serialGetInfo = new serializationGetInfo(authKey);
-	//	string jsonString = JsonConvert.SerializeObject(serialAuth);
-	//	var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
-	//	return content;
-	//}
+	//add functions to return user info
 }
