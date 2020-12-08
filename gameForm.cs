@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace Mancala_NEA_Computer_Science_Project
 {
+
     public partial class GameForm : Form
     {
+        private static readonly HttpClient client = new HttpClient();
+
         string Username;
         string Wins;
         string Losses;
@@ -19,19 +24,30 @@ namespace Mancala_NEA_Computer_Science_Project
         string UserID;
         string AuthKey;
 
+        private string[] userSave;
+        private string[] AISave;
+
         bool gameStarted = false;
         public GameForm(string UserID, string Username, string AuthKey, string Wins, string Losses, string TotalScore)
         {
-            this.UserID = UserID;
-            this.Username = Username;
-            this.AuthKey = AuthKey;
-            this.Wins = Wins;
-            this.Losses = Losses;
-            this.TotalScore = TotalScore;
-            InitializeComponent();
-            CentreItems();
-            setupUser(this.Username, this.Wins, this.Losses, this.TotalScore);
-            
+            try
+            {
+
+
+                this.UserID = UserID;
+                this.Username = Username;
+                this.AuthKey = AuthKey;
+                this.Wins = Wins;
+                this.Losses = Losses;
+                this.TotalScore = TotalScore;
+                InitializeComponent();
+                CentreItems();
+                setupUser(this.Username, this.Wins, this.Losses, this.TotalScore);
+            }
+            catch(Exception err)
+            {
+                errorBoxRTB.Text = err.ToString();
+            }
         }
 
         private void bankOneRichTextBox_TextChanged(object sender, EventArgs e)
@@ -123,12 +139,13 @@ namespace Mancala_NEA_Computer_Science_Project
 
         private void newGameBtn_Click(object sender, EventArgs e)
         {
-
+            NewGame();
         }
 
         private void savedGameBtn_Click(object sender, EventArgs e)
         {
-
+            GetSavedData(UserID, AuthKey);
+            InsertData(userSave, AISave);
         }
         private void CentreItems()
         {
@@ -152,11 +169,67 @@ namespace Mancala_NEA_Computer_Science_Project
         }
         public void NewGame() //starts new game, sets points to 0.
         {
-            int[] scoreSetup = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
-            UserPoints userOnePoints = new UserPoints(scoreSetup);
-            UserPoints userTwoPoints = new UserPoints(scoreSetup);
+            string[] scoreSetup = new string[] { "0", "0", "0", "0", "0", "0", "0", "0"};
+            InsertData(scoreSetup, scoreSetup);
+            //UserPoints userOnePoints = new UserPoints(scoreSetup); //not needed 
+            //UserPoints userTwoPoints = new UserPoints(scoreSetup);
         }
-        
+        private async void GetSavedData(string userID, string authKey) // gets data, if true passes it into variable
+        {
+            try
+            {
+                SerializationGetInfo serialGetInfo = new SerializationGetInfo(userID, authKey);
+                string jsonString = JsonConvert.SerializeObject(serialGetInfo);
+                var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/getinfo", content);
+                var RString = await result.Content.ReadAsStringAsync();
+                SerializationGetInfo deserialObj = JsonConvert.DeserializeObject<SerializationGetInfo>(RString);
+
+                if (deserialObj.ApiResponse == "true")
+                {
+
+                    UserInfoSplit userInfoSplit = new UserInfoSplit(deserialObj.UserSave);
+                    UserInfoSplit AIInfoSplit = new UserInfoSplit(deserialObj.AISave);
+                    userSave = userInfoSplit.SendSplit();
+                    AISave = AIInfoSplit.SendSplit();
+                }
+                else
+                {
+                    errorBoxRTB.Text = "Error getting saved data.";
+                }
+            }
+            catch (Exception err)
+            {
+                errorBoxRTB.Text = err.ToString();
+            }
+        }
+        private void InsertData(string[] userSave, string[] AISave)
+        {
+            try
+            {
+                playerOneBankRTB.Text = userSave[0]; //insert player one data
+                playerOneSquareOneRTB.Text = userSave[1];
+                playerOneSquareTwoRTB.Text = userSave[2];
+                playerOneSquareThreeRTB.Text = userSave[3];
+                playerOneSquareFourRTB.Text = userSave[4];
+                playerOneSquareFiveRTB.Text = userSave[5];
+                playerOneSquareSixRTB.Text = userSave[6];
+                playerOneSquareSevenRTB.Text = userSave[7];
+
+                playerTwoBankRTB.Text = AISave[0]; //insert ai data
+                playerTwoSquareOneRTB.Text = AISave[1];
+                playerTwoSquareTwoRTB.Text = AISave[2];
+                playerTwoSquareThreeRTB.Text = AISave[3];
+                playerTwoSquareFourRTB.Text = AISave[4];
+                playerTwoSquareFiveRTB.Text = AISave[5];
+                playerTwoSquareSixRTB.Text = AISave[6];
+                playerTwoSquareSevenRTB.Text = AISave[7];
+            }
+            catch(Exception err)
+            {
+                errorBoxRTB.Text = err.ToString();
+            }
+        }
         public void RefreshBoard()
         {
 
