@@ -73,6 +73,7 @@
             this.newGameBtn = new System.Windows.Forms.Button();
             this.savedGameBtn = new System.Windows.Forms.Button();
             this.rulesBtn = new System.Windows.Forms.Button();
+            this.errorBoxRTB = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -837,12 +838,23 @@
             this.rulesBtn.UseVisualStyleBackColor = false;
             this.rulesBtn.Click += new System.EventHandler(this.rulesBtn_Click);
             // 
+            // errorBoxRTB
+            // 
+            this.errorBoxRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.errorBoxRTB.Location = new System.Drawing.Point(343, 71);
+            this.errorBoxRTB.Name = "errorBoxRTB";
+            this.errorBoxRTB.ReadOnly = true;
+            this.errorBoxRTB.Size = new System.Drawing.Size(431, 87);
+            this.errorBoxRTB.TabIndex = 44;
+            this.errorBoxRTB.Text = "";
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1321, 761);
+            this.Controls.Add(this.errorBoxRTB);
             this.Controls.Add(this.rulesBtn);
             this.Controls.Add(this.savedGameBtn);
             this.Controls.Add(this.newGameBtn);
@@ -944,5 +956,6 @@
         private System.Windows.Forms.Button newGameBtn;
         private System.Windows.Forms.Button savedGameBtn;
         private System.Windows.Forms.Button rulesBtn;
+        private System.Windows.Forms.RichTextBox errorBoxRTB;
     }
 }
