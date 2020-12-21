@@ -10,11 +10,13 @@ public class serializationGetInfo
 	public string AISave { get; set; }
 
 	public string Username { get; set; }
+	public string UserID { get; set; }
 	public string AuthKey { get; set; }
 
-	public serializationGetInfo(string Username, string AuthKey)
+	public serializationGetInfo(string Username, string UserID, string AuthKey)
 	{
 		this.Username = Username;
 		this.AuthKey = AuthKey;
+		this.UserID = UserID;
 	}
 }

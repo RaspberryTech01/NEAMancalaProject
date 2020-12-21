@@ -18,6 +18,8 @@ namespace Mancala_NEA_Computer_Science_Project
         string TotalScore;
         string UserID;
         string AuthKey;
+        public UserPoints userOnePoints;
+        public UserPoints userTwoPoints;
 
         bool gameStarted = false;
         public GameForm(string UserID, string Username, string AuthKey, string Wins, string Losses, string TotalScore)
@@ -31,7 +33,6 @@ namespace Mancala_NEA_Computer_Science_Project
             InitializeComponent();
             CentreItems();
             setupUser(this.Username, this.Wins, this.Losses, this.TotalScore);
-            
         }
 
         private void bankOneRichTextBox_TextChanged(object sender, EventArgs e)
@@ -87,11 +88,11 @@ namespace Mancala_NEA_Computer_Science_Project
             {
                 float winToLoss = 0;
 
-                if (Wins == "null" || Wins == null)
+                if (Wins == "null" || Wins == null || Wins == "0")
                 {
                     Wins = "0";
                 }
-                if(Losses == "null" || Losses == null)
+                if(Losses == "null" || Losses == null || Losses == "0")
                 {
                     Losses = "0";
                     winToLoss = float.Parse(Wins);
@@ -100,7 +101,7 @@ namespace Mancala_NEA_Computer_Science_Project
                 {
                     winToLoss = int.Parse(Wins) / int.Parse(Losses);
                 }
-                if (TotalScore == "null" || TotalScore == null)
+                if (TotalScore == "null" || TotalScore == null || TotalScore == "0")
                 {
                     TotalScore = "0";
                 }
@@ -123,7 +124,7 @@ namespace Mancala_NEA_Computer_Science_Project
 
         private void newGameBtn_Click(object sender, EventArgs e)
         {
-
+            NewGame();
         }
 
         private void savedGameBtn_Click(object sender, EventArgs e)
@@ -152,14 +153,43 @@ namespace Mancala_NEA_Computer_Science_Project
         }
         public void NewGame() //starts new game, sets points to 0.
         {
-            int[] scoreSetup = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
-            UserPoints userOnePoints = new UserPoints(scoreSetup);
-            UserPoints userTwoPoints = new UserPoints(scoreSetup);
+            int[] scoreSetup = new int[] { 0, 4, 4, 4, 4, 4, 4, 4 };
+            userOnePoints = new UserPoints(scoreSetup);
+            userTwoPoints = new UserPoints(scoreSetup);
+            RefreshBoard();
+        }
+        public void GetSavedGame()
+        {
+
         }
         
         public void RefreshBoard()
         {
+            playerOneBankRTB.Text = userOnePoints.ReturnUserBank();
+            playerTwoBankRTB.Text = userTwoPoints.ReturnUserBank();
 
+            playerOneSquareOneRTB.Text = userOnePoints.ReturnUserHoleOne();
+            playerTwoSquareOneRTB.Text = userTwoPoints.ReturnUserHoleOne();
+
+            playerOneSquareTwoRTB.Text = userOnePoints.ReturnUserHoleTwo();
+            playerTwoSquareTwoRTB.Text = userTwoPoints.ReturnUserHoleTwo();
+
+            playerOneSquareThreeRTB.Text = userOnePoints.ReturnUserHoleThree();
+            playerTwoSquareThreeRTB.Text = userTwoPoints.ReturnUserHoleThree();
+
+            playerOneSquareFourRTB.Text = userOnePoints.ReturnUserHoleFour();
+            playerTwoSquareFourRTB.Text = userTwoPoints.ReturnUserHoleFour();
+
+            playerOneSquareFiveRTB.Text = userOnePoints.ReturnUserHoleFive();
+            playerTwoSquareFiveRTB.Text = userTwoPoints.ReturnUserHoleFive();
+
+            playerOneSquareSixRTB.Text = userOnePoints.ReturnUserHoleSix();
+            playerTwoSquareSixRTB.Text = userTwoPoints.ReturnUserHoleSix();
+
+            playerOneSquareSevenRTB.Text = userOnePoints.ReturnUserHoleSeven();
+            playerTwoSquareSevenRTB.Text = userTwoPoints.ReturnUserHoleSeven();
+
+            CentreItems();
         }
         
     }

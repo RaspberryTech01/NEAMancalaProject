@@ -54,7 +54,6 @@ namespace Mancala_NEA_Computer_Science_Project
 
         private async void registerBtn_Click(object sender, EventArgs e)
         {
-            
             try
             {
                 string usernameRegister = usernameInputField.Text;
@@ -108,7 +107,7 @@ namespace Mancala_NEA_Computer_Science_Project
                     SerializationAuth deserialObj = JsonConvert.DeserializeObject<SerializationAuth>(rString);
                     if (deserialObj.ApiResponse == "true")
                     {
-
+                        return "Successful! Login to your new account.";
                     }
                     else
                     {

@@ -25,8 +25,38 @@ public class UserPoints
         {
 
         }
-		
 	}
-
+	public string ReturnUserBank()
+	{
+		return UserScores[0].ToString();
+	}
+	public string ReturnUserHoleOne()
+    {
+		return UserScores[1].ToString();
+    }
+	public string ReturnUserHoleTwo()
+	{
+		return UserScores[2].ToString();
+	}
+	public string ReturnUserHoleThree()
+	{
+		return UserScores[3].ToString();
+	}
+	public string ReturnUserHoleFour()
+	{
+		return UserScores[4].ToString();
+	}
+	public string ReturnUserHoleFive()
+	{
+		return UserScores[5].ToString();
+	}
+	public string ReturnUserHoleSix()
+	{
+		return UserScores[6].ToString();
+	}
+	public string ReturnUserHoleSeven()
+	{
+		return UserScores[7].ToString();
+	}
 	//add functions to return user info
 }
