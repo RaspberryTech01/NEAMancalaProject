@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class serializationGetInfo
+public class SerializationGetInfo
 {
 	public string UserSave { get; set; }
 	public string AISave { get; set; }
@@ -12,8 +12,9 @@ public class serializationGetInfo
 	public string Username { get; set; }
 	public string UserID { get; set; }
 	public string AuthKey { get; set; }
+	public string ApiResponse { get; set; }
 
-	public serializationGetInfo(string Username, string UserID, string AuthKey)
+	public SerializationGetInfo(string Username, string UserID, string AuthKey)
 	{
 		this.Username = Username;
 		this.AuthKey = AuthKey;
