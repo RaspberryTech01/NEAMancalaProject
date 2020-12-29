@@ -12,7 +12,6 @@ using Newtonsoft.Json;
 
 namespace Mancala_NEA_Computer_Science_Project
 {
-
     public partial class GameForm : Form
     {
         private static readonly HttpClient client = new HttpClient();
@@ -25,28 +24,12 @@ namespace Mancala_NEA_Computer_Science_Project
         string AuthKey;
         public UserPoints userOnePoints;
         public UserPoints userTwoPoints;
-
-        private string[] userSave;
-        private string[] AISave;
-
         bool gameStarted = false;
+        int UserTurn;
         public GameForm(string UserID, string Username, string AuthKey, string Wins, string Losses, string TotalScore)
         {
-
-            this.UserID = UserID;
-            this.Username = Username;
-            this.AuthKey = AuthKey;
-            this.Wins = Wins;
-            this.Losses = Losses;
-            this.TotalScore = TotalScore;
-            InitializeComponent();
-            CentreItems();
-            setupUser(this.Username, this.Wins, this.Losses, this.TotalScore);
-
             try
             {
-
-
                 this.UserID = UserID;
                 this.Username = Username;
                 this.AuthKey = AuthKey;
@@ -61,56 +44,125 @@ namespace Mancala_NEA_Computer_Science_Project
             {
                 errorBoxRTB.Text = err.ToString();
             }
-
         }
-
         private void bankOneRichTextBox_TextChanged(object sender, EventArgs e)
         {
             
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            playerOneSquareTwoRTB.Text = Wins + Losses;
-            CentreItems();
+            if (gameStarted && UserTurn == 1)
+            {
+                playerMove("UserOne", int.Parse(userOnePoints.ReturnUserHoleOne()), 1);
+            }
         }
         private void playerOneButtonTwo_Click(object sender, EventArgs e)
         {
-            if (gameStarted)
+            if (gameStarted && UserTurn == 1)
             {
-
-            }
-            else
-            {
-                
+                playerMove("UserOne", int.Parse(userOnePoints.ReturnUserHoleTwo()), 2);
             }
         }
         private void playerOneButtonThree_Click(object sender, EventArgs e)
         {
-
+            if (gameStarted && UserTurn == 1)
+            {
+                playerMove("UserOne", int.Parse(userOnePoints.ReturnUserHoleThree()), 3);
+            }
         }
-
         private void playerOneButtonFour_Click(object sender, EventArgs e)
         {
-
+            if (gameStarted && UserTurn == 1)
+            {
+                playerMove("UserOne", int.Parse(userOnePoints.ReturnUserHoleFour()), 4);
+            }
         }
-
         private void playerOneButtonFive_Click(object sender, EventArgs e)
         {
-
+            if (gameStarted && UserTurn == 1)
+            {
+                playerMove("UserOne", int.Parse(userOnePoints.ReturnUserHoleFive()), 5);
+            }
         }
-
         private void playerOneButtonSix_Click(object sender, EventArgs e)
         {
-
+            if (gameStarted && UserTurn == 1)
+            {
+                playerMove("UserOne", int.Parse(userOnePoints.ReturnUserHoleSix()), 6);
+            }
         }
-
         private void playerOneButtonSeven_Click(object sender, EventArgs e)
         {
-
+            if (gameStarted && UserTurn == 1)
+            {
+                playerMove("UserOne", int.Parse(userOnePoints.ReturnUserHoleSeven()), 7);
+            }
         }
-
-        
+        private void playerTwoButtonOne_Click(object sender, EventArgs e)
+        {
+            if (gameStarted && UserTurn == 2)
+            {
+                playerMove("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleOne()), 1);
+            }
+        }
+        private void playerTwoButtonTwo_Click(object sender, EventArgs e)
+        {
+            if (gameStarted && UserTurn == 2)
+            {
+                playerMove("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleTwo()), 2);
+            }
+        }
+        private void playerTwoButtonThree_Click(object sender, EventArgs e)
+        {
+            if (gameStarted && UserTurn == 2)
+            {
+                playerMove("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleThree()), 3);
+            }
+        }
+        private void playerTwoButtonFour_Click(object sender, EventArgs e)
+        {
+            if (gameStarted && UserTurn == 2)
+            {
+                playerMove("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleFour()), 4);
+            }
+        }
+        private void playerTwoButtonFive_Click(object sender, EventArgs e)
+        {
+            if (gameStarted && UserTurn == 2)
+            {
+                playerMove("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleFive()), 5);
+            }
+        }
+        private void playerTwoButtonSix_Click(object sender, EventArgs e)
+        {
+            if (gameStarted && UserTurn == 2)
+            {
+                playerMove("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleSix()), 6);
+            }
+        }
+        private void playerTwoButtonSeven_Click(object sender, EventArgs e)
+        {
+            if (gameStarted && UserTurn == 2)
+            {
+                playerMove("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleSeven()), 7);
+            }
+        }
+        private void rulesBtn_Click(object sender, EventArgs e)
+        {
+            RulesForm rulesForm = new RulesForm();
+            rulesForm.Show();
+        }
+        private void newGameBtn_Click(object sender, EventArgs e)
+        {
+            NewGame();
+            gameStarted = true;
+            UserTurn = 1;
+        }
+        private void savedGameBtn_Click(object sender, EventArgs e)
+        {
+            GetSavedGame();
+            gameStarted = true;
+        }
         private void setupUser(string Username, string Wins, string Losses, string TotalScore)
         {
             try
@@ -121,7 +173,7 @@ namespace Mancala_NEA_Computer_Science_Project
                 {
                     Wins = "0";
                 }
-                if(Losses == "null" || Losses == null || Losses == "0")
+                if (Losses == "null" || Losses == null || Losses == "0")
                 {
                     Losses = "0";
                     winToLoss = float.Parse(Wins);
@@ -139,31 +191,14 @@ namespace Mancala_NEA_Computer_Science_Project
                 playerOneWinLossRTB.Text = winToLoss.ToString();
                 playerOneAllTimeScoreRTB.Text = TotalScore;
             }
-            catch (Exception error){
+            catch (Exception error)
+            {
                 playerOneAllTimeScoreRTB.Text = error.ToString();
             };
-            
-        }
-       
-        private void rulesBtn_Click(object sender, EventArgs e)
-        {
-            RulesForm rulesForm = new RulesForm();
-            rulesForm.Show();
-        }
-
-        private void newGameBtn_Click(object sender, EventArgs e)
-        {
-            NewGame();
-        }
-
-        private void savedGameBtn_Click(object sender, EventArgs e)
-        {
-            GetSavedData(UserID, AuthKey);
-            InsertData(userSave, AISave);
         }
         private void CentreItems()
         {
-            playerOneBankRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerTwoBankRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerOneSquareOneRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerOneSquareTwoRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerOneSquareThreeRTB.SelectionAlignment = HorizontalAlignment.Center;
@@ -172,7 +207,7 @@ namespace Mancala_NEA_Computer_Science_Project
             playerOneSquareSixRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerOneSquareSevenRTB.SelectionAlignment = HorizontalAlignment.Center;
             //Align Text in boxes for User1 and User2
-            playerTwoBankRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerOneBankRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerTwoSquareOneRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerTwoSquareTwoRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerTwoSquareThreeRTB.SelectionAlignment = HorizontalAlignment.Center;
@@ -181,84 +216,25 @@ namespace Mancala_NEA_Computer_Science_Project
             playerTwoSquareSixRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerTwoSquareSevenRTB.SelectionAlignment = HorizontalAlignment.Center;
         }
-        public void NewGame() //starts new game, sets points to 0.
+        private void NewGame() //starts new game, sets points to 0.
         {
-
-            int[] scoreSetup = new int[] { 0, 4, 4, 4, 4, 4, 4, 4 };
-            userOnePoints = new UserPoints(scoreSetup);
-            userTwoPoints = new UserPoints(scoreSetup);
+            int[] scoreSetupOne = new int[] { 0, 4, 4, 4, 4, 4, 4, 4 };
+            userOnePoints = new UserPoints(scoreSetupOne);
+            int[] scoreSetupTwo = new int[] { 0, 4, 4, 4, 4, 4, 4, 4 };
+            userTwoPoints = new UserPoints(scoreSetupTwo);
             RefreshBoard();
         }
-        public void GetSavedGame()
+        private void GetSavedGame()
         {
-
-            string[] scoreSetup = new string[] { "0", "0", "0", "0", "0", "0", "0", "0"};
-            InsertData(scoreSetup, scoreSetup);
-            //UserPoints userOnePoints = new UserPoints(scoreSetup); //not needed 
-            //UserPoints userTwoPoints = new UserPoints(scoreSetup);
+            GetUserSavedData getData = new GetUserSavedData(Username, UserID, AuthKey); //getData.
+            userOnePoints = new UserPoints(getData.GetUserSave()); //not needed 
+            userTwoPoints = new UserPoints(getData.GetAISave());
+            RefreshBoard();
         }
-
-        private async void GetSavedData(string userID, string authKey) // gets data, if true passes it into variable
+        private void RefreshBoard()
         {
-            try
-            {
-                SerializationGetInfo serialGetInfo = new SerializationGetInfo(Username, userID, authKey);
-                string jsonString = JsonConvert.SerializeObject(serialGetInfo);
-                var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
-                var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/getinfo", content);
-                var RString = await result.Content.ReadAsStringAsync();
-                SerializationGetInfo deserialObj = JsonConvert.DeserializeObject<SerializationGetInfo>(RString);
-
-                if (deserialObj.ApiResponse == "true")
-                {
-
-                    UserInfoSplit userInfoSplit = new UserInfoSplit(deserialObj.UserSave);
-                    UserInfoSplit AIInfoSplit = new UserInfoSplit(deserialObj.AISave);
-                    userSave = userInfoSplit.SendSplit();
-                    AISave = AIInfoSplit.SendSplit();
-                }
-                else
-                {
-                    errorBoxRTB.Text = "Error getting saved data.";
-                }
-            }
-            catch (Exception err)
-            {
-                errorBoxRTB.Text = err.ToString();
-            }
-        }
-        private void InsertData(string[] userSave, string[] AISave)
-        {
-            try
-            {
-                playerOneBankRTB.Text = userSave[0]; //insert player one data
-                playerOneSquareOneRTB.Text = userSave[1];
-                playerOneSquareTwoRTB.Text = userSave[2];
-                playerOneSquareThreeRTB.Text = userSave[3];
-                playerOneSquareFourRTB.Text = userSave[4];
-                playerOneSquareFiveRTB.Text = userSave[5];
-                playerOneSquareSixRTB.Text = userSave[6];
-                playerOneSquareSevenRTB.Text = userSave[7];
-
-                playerTwoBankRTB.Text = AISave[0]; //insert ai data
-                playerTwoSquareOneRTB.Text = AISave[1];
-                playerTwoSquareTwoRTB.Text = AISave[2];
-                playerTwoSquareThreeRTB.Text = AISave[3];
-                playerTwoSquareFourRTB.Text = AISave[4];
-                playerTwoSquareFiveRTB.Text = AISave[5];
-                playerTwoSquareSixRTB.Text = AISave[6];
-                playerTwoSquareSevenRTB.Text = AISave[7];
-            }
-            catch(Exception err)
-            {
-                errorBoxRTB.Text = err.ToString();
-            }
-
-        }
-        public void RefreshBoard()
-        {
-            playerOneBankRTB.Text = userOnePoints.ReturnUserBank();
-            playerTwoBankRTB.Text = userTwoPoints.ReturnUserBank();
+            playerTwoBankRTB.Text = userOnePoints.ReturnUserBank();
+            playerOneBankRTB.Text = userTwoPoints.ReturnUserBank();
 
             playerOneSquareOneRTB.Text = userOnePoints.ReturnUserHoleOne();
             playerTwoSquareOneRTB.Text = userTwoPoints.ReturnUserHoleOne();
@@ -283,6 +259,104 @@ namespace Mancala_NEA_Computer_Science_Project
 
             CentreItems();
         }
+        private void playerMove(string playerMoving, int shells, int currentPosition)
+        {
+            if(shells == 0) //if no shells when button is clicked
+            {
+
+            }
+            else
+            {
+                int sideOfBoard;
+                int nextPosition;
+                if(playerMoving == "UserOne")
+                {
+                    nextPosition = currentPosition + 1;
+                    sideOfBoard = 1;
+                    userOnePoints.RemoveShells(currentPosition);
+                    UserTurn = 2;
+                }
+                else
+                {
+                    nextPosition = currentPosition - 1;
+                    sideOfBoard = 2;
+                    userTwoPoints.RemoveShells(currentPosition);
+                    UserTurn = 1;
+                }
+
+                for (int i = 0; i < shells + 1; i++)
+                {
+                    if (sideOfBoard == 1)
+                    {
+                        if(i == shells - 1) //check if last shell is placed in bank
+                        {
+                            if(nextPosition == 8 && playerMoving == "UserOne")
+                            {
+                                UserTurn = 1;
+                                userOnePoints.UpdateHole(8, playerMoving);
+                            }
+                            //else if(nextPosition == 0 && playerMoving == "UserTwo")
+                            //{
+                            //    UserTurn = 2;
+                            //    userTwoPoints.UpdateHole(7, playerMoving);
+                            //}
+                        }
+                        else if (nextPosition == 8 && playerMoving == "UserOne") //check if next shells goes in the bank for that player or skips opposing team bank
+                        {
+                            userOnePoints.UpdateHole(8, playerMoving);
+                            nextPosition = 7;
+                            sideOfBoard = 2;
+                        }
+                        else if (nextPosition == 8 && playerMoving == "UserTwo") //check to see if user has gone around the board
+                        {
+                            userTwoPoints.UpdateHole(7, playerMoving);
+                            nextPosition = 6;
+                            sideOfBoard = 2;
+                        }
+                        else
+                        {
+                            userOnePoints.UpdateHole(nextPosition, playerMoving);
+                            nextPosition++;
+                        }
+                    }
+                    else if (sideOfBoard == 2)
+                    {
+                        if (i == shells - 1) //check if last shell is placed in bank
+                        {
+                            //if (nextPosition == 8 && playerMoving == "UserOne")
+                            //{
+                            //    UserTurn = 1;
+                            //    userOnePoints.UpdateHole(8, playerMoving);
+                            //}
+                            if (nextPosition == 0 && playerMoving == "UserTwo")
+                            {
+                                UserTurn = 2;
+                                userTwoPoints.UpdateHole(0, playerMoving);
+                            }
+                        }
+                        else if (nextPosition == 0 && playerMoving == "UserTwo")
+                        {
+                            userTwoPoints.UpdateHole(0, playerMoving);
+                            nextPosition = 1;
+                            sideOfBoard = 1;
+                        }
+                        else if (nextPosition == 0 && playerMoving == "UserOne")
+                        {
+                            userOnePoints.UpdateHole(1, playerMoving);
+                            nextPosition = 2;
+                            sideOfBoard = 1;
+                        }
+                        else
+                        {
+                            userTwoPoints.UpdateHole(nextPosition, playerMoving);
+                            nextPosition--;
+                        }
+                    }
+                    RefreshBoard();
+                }
+            }
+        }
+
         
     }
 }

@@ -8,20 +8,24 @@ using Newtonsoft.Json;
 
 namespace Mancala_NEA_Computer_Science_Project
 {
-    class GetUserSavedData
+    public class GetUserSavedData
     {
         private static readonly HttpClient client = new HttpClient();
         private string Username;
         private string UserID;
         private string AuthKey;
-        private string[] UserSave;
-        private string[] AISave;
+        private int[] UserSave;
+        private int[] AISave;
         public GetUserSavedData(string Username, string UserID, string AuthKey)
         {
             this.Username = Username;
             this.UserID = UserID;
             this.AuthKey = AuthKey;
-            GetSavedData();
+            StartReq();
+        }
+        public async void StartReq()
+        {
+            await GetSavedData();
         }
         private async Task<string> GetSavedData()
         {
@@ -32,16 +36,20 @@ namespace Mancala_NEA_Computer_Science_Project
             var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/getinfo", content);
             var RString = await result.Content.ReadAsStringAsync();
             SerializationGetInfo deserialObj = JsonConvert.DeserializeObject<SerializationGetInfo>(RString);
-            this.UserSave = deserialObj.UserSave;
-            this.AISave = deserialObj.AISave;
-            return null;
+            string userSave = deserialObj.UserSave;
+            string AISave = deserialObj.AISave;
+            UserInfoSplit UserSplitSave = new UserInfoSplit(userSave);
+            UserInfoSplit AISplitSave = new UserInfoSplit(AISave);
+            this.UserSave = UserSplitSave.SendSplit();
+            this.AISave = AISplitSave.SendSplit();
+            return "null";
         }
 
-        public string[] GetUserSave()
+        public int[] GetUserSave()
         {
             return UserSave;
         }
-        public string[] GetAISave()
+        public int[] GetAISave()
         {
             return AISave;
         }

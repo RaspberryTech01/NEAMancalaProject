@@ -58,5 +58,24 @@ public class UserPoints
 	{
 		return UserScores[7].ToString();
 	}
+	public void UpdateHole(int holeNum, string UserMove)
+    {
+		if (holeNum == 8 && UserMove == "UserOne")
+		{
+			UserScores[0] = UserScores[0] + 1;
+		}
+		else if (holeNum == 0 && UserMove == "UserTwo")
+        {
+			UserScores[0] = UserScores[0] + 1;
+		}
+		else
+		{
+			UserScores[holeNum] = UserScores[holeNum] + 1;
+		}
+    }
+	public void RemoveShells(int holeNum)
+    {
+		UserScores[holeNum] = 0;
+    }
 	//add functions to return user info
 }

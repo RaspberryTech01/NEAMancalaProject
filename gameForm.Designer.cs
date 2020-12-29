@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.playerOneBankRTB = new System.Windows.Forms.RichTextBox();
+            this.playerTwoBankRTB = new System.Windows.Forms.RichTextBox();
             this.playerOneSquareOneRTB = new System.Windows.Forms.RichTextBox();
             this.playerOneSquareTwoRTB = new System.Windows.Forms.RichTextBox();
             this.playerOneSquareThreeRTB = new System.Windows.Forms.RichTextBox();
@@ -36,7 +36,7 @@
             this.playerOneSquareFiveRTB = new System.Windows.Forms.RichTextBox();
             this.playerOneSquareSixRTB = new System.Windows.Forms.RichTextBox();
             this.playerOneSquareSevenRTB = new System.Windows.Forms.RichTextBox();
-            this.playerTwoBankRTB = new System.Windows.Forms.RichTextBox();
+            this.playerOneBankRTB = new System.Windows.Forms.RichTextBox();
             this.playerOneNameRTB = new System.Windows.Forms.RichTextBox();
             this.playerOneWinLossRTB = new System.Windows.Forms.RichTextBox();
             this.playerOneAllTimeScoreRTB = new System.Windows.Forms.RichTextBox();
@@ -77,26 +77,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // playerOneBankRTB
+            // playerTwoBankRTB
             // 
-            this.playerOneBankRTB.BackColor = System.Drawing.Color.LightGreen;
-            this.playerOneBankRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.playerOneBankRTB.DetectUrls = false;
-            this.playerOneBankRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerOneBankRTB.Location = new System.Drawing.Point(61, 634);
-            this.playerOneBankRTB.MaximumSize = new System.Drawing.Size(100, 30);
-            this.playerOneBankRTB.MinimumSize = new System.Drawing.Size(100, 30);
-            this.playerOneBankRTB.Multiline = false;
-            this.playerOneBankRTB.Name = "playerOneBankRTB";
-            this.playerOneBankRTB.ReadOnly = true;
-            this.playerOneBankRTB.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.playerOneBankRTB.ShortcutsEnabled = false;
-            this.playerOneBankRTB.Size = new System.Drawing.Size(100, 30);
-            this.playerOneBankRTB.TabIndex = 1;
-            this.playerOneBankRTB.TabStop = false;
-            this.playerOneBankRTB.Text = "0";
-            this.playerOneBankRTB.WordWrap = false;
-            this.playerOneBankRTB.TextChanged += new System.EventHandler(this.bankOneRichTextBox_TextChanged);
+            this.playerTwoBankRTB.BackColor = System.Drawing.Color.LightGreen;
+            this.playerTwoBankRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.playerTwoBankRTB.DetectUrls = false;
+            this.playerTwoBankRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerTwoBankRTB.Location = new System.Drawing.Point(1163, 634);
+            this.playerTwoBankRTB.MaximumSize = new System.Drawing.Size(100, 30);
+            this.playerTwoBankRTB.MinimumSize = new System.Drawing.Size(100, 30);
+            this.playerTwoBankRTB.Multiline = false;
+            this.playerTwoBankRTB.Name = "playerTwoBankRTB";
+            this.playerTwoBankRTB.ReadOnly = true;
+            this.playerTwoBankRTB.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.playerTwoBankRTB.ShortcutsEnabled = false;
+            this.playerTwoBankRTB.Size = new System.Drawing.Size(100, 30);
+            this.playerTwoBankRTB.TabIndex = 1;
+            this.playerTwoBankRTB.TabStop = false;
+            this.playerTwoBankRTB.Text = "0";
+            this.playerTwoBankRTB.WordWrap = false;
+            this.playerTwoBankRTB.TextChanged += new System.EventHandler(this.bankOneRichTextBox_TextChanged);
             // 
             // playerOneSquareOneRTB
             // 
@@ -104,7 +104,7 @@
             this.playerOneSquareOneRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerOneSquareOneRTB.DetectUrls = false;
             this.playerOneSquareOneRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerOneSquareOneRTB.Location = new System.Drawing.Point(219, 415);
+            this.playerOneSquareOneRTB.Location = new System.Drawing.Point(219, 647);
             this.playerOneSquareOneRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerOneSquareOneRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerOneSquareOneRTB.Multiline = false;
@@ -124,7 +124,7 @@
             this.playerOneSquareTwoRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerOneSquareTwoRTB.DetectUrls = false;
             this.playerOneSquareTwoRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerOneSquareTwoRTB.Location = new System.Drawing.Point(353, 415);
+            this.playerOneSquareTwoRTB.Location = new System.Drawing.Point(353, 647);
             this.playerOneSquareTwoRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerOneSquareTwoRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerOneSquareTwoRTB.Multiline = false;
@@ -144,7 +144,7 @@
             this.playerOneSquareThreeRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerOneSquareThreeRTB.DetectUrls = false;
             this.playerOneSquareThreeRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerOneSquareThreeRTB.Location = new System.Drawing.Point(487, 415);
+            this.playerOneSquareThreeRTB.Location = new System.Drawing.Point(487, 647);
             this.playerOneSquareThreeRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerOneSquareThreeRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerOneSquareThreeRTB.Multiline = false;
@@ -164,7 +164,7 @@
             this.playerOneSquareFourRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerOneSquareFourRTB.DetectUrls = false;
             this.playerOneSquareFourRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerOneSquareFourRTB.Location = new System.Drawing.Point(621, 415);
+            this.playerOneSquareFourRTB.Location = new System.Drawing.Point(621, 647);
             this.playerOneSquareFourRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerOneSquareFourRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerOneSquareFourRTB.Multiline = false;
@@ -184,7 +184,7 @@
             this.playerOneSquareFiveRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerOneSquareFiveRTB.DetectUrls = false;
             this.playerOneSquareFiveRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerOneSquareFiveRTB.Location = new System.Drawing.Point(758, 415);
+            this.playerOneSquareFiveRTB.Location = new System.Drawing.Point(758, 647);
             this.playerOneSquareFiveRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerOneSquareFiveRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerOneSquareFiveRTB.Multiline = false;
@@ -204,7 +204,7 @@
             this.playerOneSquareSixRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerOneSquareSixRTB.DetectUrls = false;
             this.playerOneSquareSixRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerOneSquareSixRTB.Location = new System.Drawing.Point(892, 415);
+            this.playerOneSquareSixRTB.Location = new System.Drawing.Point(892, 647);
             this.playerOneSquareSixRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerOneSquareSixRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerOneSquareSixRTB.Multiline = false;
@@ -224,7 +224,7 @@
             this.playerOneSquareSevenRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerOneSquareSevenRTB.DetectUrls = false;
             this.playerOneSquareSevenRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerOneSquareSevenRTB.Location = new System.Drawing.Point(1026, 415);
+            this.playerOneSquareSevenRTB.Location = new System.Drawing.Point(1026, 647);
             this.playerOneSquareSevenRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerOneSquareSevenRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerOneSquareSevenRTB.Multiline = false;
@@ -238,25 +238,25 @@
             this.playerOneSquareSevenRTB.Text = "0";
             this.playerOneSquareSevenRTB.WordWrap = false;
             // 
-            // playerTwoBankRTB
+            // playerOneBankRTB
             // 
-            this.playerTwoBankRTB.BackColor = System.Drawing.Color.LightGreen;
-            this.playerTwoBankRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.playerTwoBankRTB.DetectUrls = false;
-            this.playerTwoBankRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerTwoBankRTB.Location = new System.Drawing.Point(1163, 634);
-            this.playerTwoBankRTB.MaximumSize = new System.Drawing.Size(100, 30);
-            this.playerTwoBankRTB.MinimumSize = new System.Drawing.Size(100, 30);
-            this.playerTwoBankRTB.Multiline = false;
-            this.playerTwoBankRTB.Name = "playerTwoBankRTB";
-            this.playerTwoBankRTB.ReadOnly = true;
-            this.playerTwoBankRTB.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.playerTwoBankRTB.ShortcutsEnabled = false;
-            this.playerTwoBankRTB.Size = new System.Drawing.Size(100, 30);
-            this.playerTwoBankRTB.TabIndex = 9;
-            this.playerTwoBankRTB.TabStop = false;
-            this.playerTwoBankRTB.Text = "0";
-            this.playerTwoBankRTB.WordWrap = false;
+            this.playerOneBankRTB.BackColor = System.Drawing.Color.LightGreen;
+            this.playerOneBankRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.playerOneBankRTB.DetectUrls = false;
+            this.playerOneBankRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerOneBankRTB.Location = new System.Drawing.Point(60, 634);
+            this.playerOneBankRTB.MaximumSize = new System.Drawing.Size(100, 30);
+            this.playerOneBankRTB.MinimumSize = new System.Drawing.Size(100, 30);
+            this.playerOneBankRTB.Multiline = false;
+            this.playerOneBankRTB.Name = "playerOneBankRTB";
+            this.playerOneBankRTB.ReadOnly = true;
+            this.playerOneBankRTB.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.playerOneBankRTB.ShortcutsEnabled = false;
+            this.playerOneBankRTB.Size = new System.Drawing.Size(100, 30);
+            this.playerOneBankRTB.TabIndex = 9;
+            this.playerOneBankRTB.TabStop = false;
+            this.playerOneBankRTB.Text = "0";
+            this.playerOneBankRTB.WordWrap = false;
             // 
             // playerOneNameRTB
             // 
@@ -322,7 +322,7 @@
             this.playerTwoSquareSevenRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerTwoSquareSevenRTB.DetectUrls = false;
             this.playerTwoSquareSevenRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerTwoSquareSevenRTB.Location = new System.Drawing.Point(1026, 647);
+            this.playerTwoSquareSevenRTB.Location = new System.Drawing.Point(1026, 417);
             this.playerTwoSquareSevenRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareSevenRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareSevenRTB.Multiline = false;
@@ -342,7 +342,7 @@
             this.playerTwoSquareSixRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerTwoSquareSixRTB.DetectUrls = false;
             this.playerTwoSquareSixRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerTwoSquareSixRTB.Location = new System.Drawing.Point(892, 647);
+            this.playerTwoSquareSixRTB.Location = new System.Drawing.Point(892, 417);
             this.playerTwoSquareSixRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareSixRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareSixRTB.Multiline = false;
@@ -362,7 +362,7 @@
             this.playerTwoSquareFiveRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerTwoSquareFiveRTB.DetectUrls = false;
             this.playerTwoSquareFiveRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerTwoSquareFiveRTB.Location = new System.Drawing.Point(758, 647);
+            this.playerTwoSquareFiveRTB.Location = new System.Drawing.Point(758, 417);
             this.playerTwoSquareFiveRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareFiveRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareFiveRTB.Multiline = false;
@@ -382,7 +382,7 @@
             this.playerTwoSquareFourRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerTwoSquareFourRTB.DetectUrls = false;
             this.playerTwoSquareFourRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerTwoSquareFourRTB.Location = new System.Drawing.Point(621, 647);
+            this.playerTwoSquareFourRTB.Location = new System.Drawing.Point(621, 417);
             this.playerTwoSquareFourRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareFourRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareFourRTB.Multiline = false;
@@ -402,7 +402,7 @@
             this.playerTwoSquareThreeRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerTwoSquareThreeRTB.DetectUrls = false;
             this.playerTwoSquareThreeRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerTwoSquareThreeRTB.Location = new System.Drawing.Point(487, 647);
+            this.playerTwoSquareThreeRTB.Location = new System.Drawing.Point(487, 417);
             this.playerTwoSquareThreeRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareThreeRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareThreeRTB.Multiline = false;
@@ -422,7 +422,7 @@
             this.playerTwoSquareTwoRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerTwoSquareTwoRTB.DetectUrls = false;
             this.playerTwoSquareTwoRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerTwoSquareTwoRTB.Location = new System.Drawing.Point(353, 647);
+            this.playerTwoSquareTwoRTB.Location = new System.Drawing.Point(353, 417);
             this.playerTwoSquareTwoRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareTwoRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareTwoRTB.Multiline = false;
@@ -442,7 +442,7 @@
             this.playerTwoSquareOneRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.playerTwoSquareOneRTB.DetectUrls = false;
             this.playerTwoSquareOneRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerTwoSquareOneRTB.Location = new System.Drawing.Point(219, 647);
+            this.playerTwoSquareOneRTB.Location = new System.Drawing.Point(219, 417);
             this.playerTwoSquareOneRTB.MaximumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareOneRTB.MinimumSize = new System.Drawing.Size(80, 30);
             this.playerTwoSquareOneRTB.Multiline = false;
@@ -511,7 +511,7 @@
             this.playerOneButtonOne.FlatAppearance.BorderSize = 0;
             this.playerOneButtonOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playerOneButtonOne.ForeColor = System.Drawing.Color.Transparent;
-            this.playerOneButtonOne.Location = new System.Drawing.Point(207, 299);
+            this.playerOneButtonOne.Location = new System.Drawing.Point(208, 531);
             this.playerOneButtonOne.Margin = new System.Windows.Forms.Padding(0);
             this.playerOneButtonOne.Name = "playerOneButtonOne";
             this.playerOneButtonOne.Size = new System.Drawing.Size(100, 155);
@@ -537,7 +537,7 @@
             this.playerOneButtonTwo.FlatAppearance.BorderSize = 0;
             this.playerOneButtonTwo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playerOneButtonTwo.ForeColor = System.Drawing.Color.Transparent;
-            this.playerOneButtonTwo.Location = new System.Drawing.Point(343, 299);
+            this.playerOneButtonTwo.Location = new System.Drawing.Point(344, 531);
             this.playerOneButtonTwo.Margin = new System.Windows.Forms.Padding(0);
             this.playerOneButtonTwo.Name = "playerOneButtonTwo";
             this.playerOneButtonTwo.Size = new System.Drawing.Size(100, 155);
@@ -554,7 +554,7 @@
             this.playerOneButtonThree.FlatAppearance.BorderSize = 0;
             this.playerOneButtonThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playerOneButtonThree.ForeColor = System.Drawing.Color.Transparent;
-            this.playerOneButtonThree.Location = new System.Drawing.Point(478, 301);
+            this.playerOneButtonThree.Location = new System.Drawing.Point(479, 533);
             this.playerOneButtonThree.Margin = new System.Windows.Forms.Padding(0);
             this.playerOneButtonThree.Name = "playerOneButtonThree";
             this.playerOneButtonThree.Size = new System.Drawing.Size(100, 155);
@@ -571,7 +571,7 @@
             this.playerOneButtonFour.FlatAppearance.BorderSize = 0;
             this.playerOneButtonFour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playerOneButtonFour.ForeColor = System.Drawing.Color.Transparent;
-            this.playerOneButtonFour.Location = new System.Drawing.Point(613, 300);
+            this.playerOneButtonFour.Location = new System.Drawing.Point(614, 532);
             this.playerOneButtonFour.Margin = new System.Windows.Forms.Padding(0);
             this.playerOneButtonFour.Name = "playerOneButtonFour";
             this.playerOneButtonFour.Size = new System.Drawing.Size(100, 155);
@@ -588,7 +588,7 @@
             this.playerOneButtonFive.FlatAppearance.BorderSize = 0;
             this.playerOneButtonFive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playerOneButtonFive.ForeColor = System.Drawing.Color.Transparent;
-            this.playerOneButtonFive.Location = new System.Drawing.Point(747, 300);
+            this.playerOneButtonFive.Location = new System.Drawing.Point(748, 532);
             this.playerOneButtonFive.Margin = new System.Windows.Forms.Padding(0);
             this.playerOneButtonFive.Name = "playerOneButtonFive";
             this.playerOneButtonFive.Size = new System.Drawing.Size(100, 155);
@@ -605,7 +605,7 @@
             this.playerOneButtonSix.FlatAppearance.BorderSize = 0;
             this.playerOneButtonSix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playerOneButtonSix.ForeColor = System.Drawing.Color.Transparent;
-            this.playerOneButtonSix.Location = new System.Drawing.Point(882, 300);
+            this.playerOneButtonSix.Location = new System.Drawing.Point(883, 532);
             this.playerOneButtonSix.Margin = new System.Windows.Forms.Padding(0);
             this.playerOneButtonSix.Name = "playerOneButtonSix";
             this.playerOneButtonSix.Size = new System.Drawing.Size(100, 155);
@@ -622,7 +622,7 @@
             this.playerOneButtonSeven.FlatAppearance.BorderSize = 0;
             this.playerOneButtonSeven.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playerOneButtonSeven.ForeColor = System.Drawing.Color.Transparent;
-            this.playerOneButtonSeven.Location = new System.Drawing.Point(1016, 299);
+            this.playerOneButtonSeven.Location = new System.Drawing.Point(1017, 531);
             this.playerOneButtonSeven.Margin = new System.Windows.Forms.Padding(0);
             this.playerOneButtonSeven.Name = "playerOneButtonSeven";
             this.playerOneButtonSeven.Size = new System.Drawing.Size(100, 155);
@@ -639,13 +639,14 @@
             this.playerTwoButtonSeven.FlatAppearance.BorderSize = 0;
             this.playerTwoButtonSeven.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playerTwoButtonSeven.ForeColor = System.Drawing.Color.Transparent;
-            this.playerTwoButtonSeven.Location = new System.Drawing.Point(1016, 530);
+            this.playerTwoButtonSeven.Location = new System.Drawing.Point(1017, 301);
             this.playerTwoButtonSeven.Margin = new System.Windows.Forms.Padding(0);
             this.playerTwoButtonSeven.Name = "playerTwoButtonSeven";
             this.playerTwoButtonSeven.Size = new System.Drawing.Size(100, 155);
             this.playerTwoButtonSeven.TabIndex = 37;
             this.playerTwoButtonSeven.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.playerTwoButtonSeven.UseVisualStyleBackColor = false;
+            this.playerTwoButtonSeven.Click += new System.EventHandler(this.playerTwoButtonSeven_Click);
             // 
             // playerTwoButtonSix
             // 
@@ -655,13 +656,14 @@
             this.playerTwoButtonSix.FlatAppearance.BorderSize = 0;
             this.playerTwoButtonSix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playerTwoButtonSix.ForeColor = System.Drawing.Color.Transparent;
-            this.playerTwoButtonSix.Location = new System.Drawing.Point(882, 531);
+            this.playerTwoButtonSix.Location = new System.Drawing.Point(883, 302);
             this.playerTwoButtonSix.Margin = new System.Windows.Forms.Padding(0);
             this.playerTwoButtonSix.Name = "playerTwoButtonSix";
             this.playerTwoButtonSix.Size = new System.Drawing.Size(100, 155);
             this.playerTwoButtonSix.TabIndex = 36;
             this.playerTwoButtonSix.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.playerTwoButtonSix.UseVisualStyleBackColor = false;
+            this.playerTwoButtonSix.Click += new System.EventHandler(this.playerTwoButtonSix_Click);
             // 
             // playerTwoButtonFive
             // 
@@ -671,13 +673,14 @@
             this.playerTwoButtonFive.FlatAppearance.BorderSize = 0;
             this.playerTwoButtonFive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playerTwoButtonFive.ForeColor = System.Drawing.Color.Transparent;
-            this.playerTwoButtonFive.Location = new System.Drawing.Point(747, 531);
+            this.playerTwoButtonFive.Location = new System.Drawing.Point(748, 302);
             this.playerTwoButtonFive.Margin = new System.Windows.Forms.Padding(0);
             this.playerTwoButtonFive.Name = "playerTwoButtonFive";
             this.playerTwoButtonFive.Size = new System.Drawing.Size(100, 155);
             this.playerTwoButtonFive.TabIndex = 35;
             this.playerTwoButtonFive.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.playerTwoButtonFive.UseVisualStyleBackColor = false;
+            this.playerTwoButtonFive.Click += new System.EventHandler(this.playerTwoButtonFive_Click);
             // 
             // playerTwoButtonFour
             // 
@@ -687,13 +690,14 @@
             this.playerTwoButtonFour.FlatAppearance.BorderSize = 0;
             this.playerTwoButtonFour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playerTwoButtonFour.ForeColor = System.Drawing.Color.Transparent;
-            this.playerTwoButtonFour.Location = new System.Drawing.Point(613, 531);
+            this.playerTwoButtonFour.Location = new System.Drawing.Point(614, 302);
             this.playerTwoButtonFour.Margin = new System.Windows.Forms.Padding(0);
             this.playerTwoButtonFour.Name = "playerTwoButtonFour";
             this.playerTwoButtonFour.Size = new System.Drawing.Size(100, 155);
             this.playerTwoButtonFour.TabIndex = 34;
             this.playerTwoButtonFour.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.playerTwoButtonFour.UseVisualStyleBackColor = false;
+            this.playerTwoButtonFour.Click += new System.EventHandler(this.playerTwoButtonFour_Click);
             // 
             // playerTwoButtonThree
             // 
@@ -703,13 +707,14 @@
             this.playerTwoButtonThree.FlatAppearance.BorderSize = 0;
             this.playerTwoButtonThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playerTwoButtonThree.ForeColor = System.Drawing.Color.Transparent;
-            this.playerTwoButtonThree.Location = new System.Drawing.Point(478, 532);
+            this.playerTwoButtonThree.Location = new System.Drawing.Point(479, 303);
             this.playerTwoButtonThree.Margin = new System.Windows.Forms.Padding(0);
             this.playerTwoButtonThree.Name = "playerTwoButtonThree";
             this.playerTwoButtonThree.Size = new System.Drawing.Size(100, 155);
             this.playerTwoButtonThree.TabIndex = 33;
             this.playerTwoButtonThree.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.playerTwoButtonThree.UseVisualStyleBackColor = false;
+            this.playerTwoButtonThree.Click += new System.EventHandler(this.playerTwoButtonThree_Click);
             // 
             // playerTwoButtonTwo
             // 
@@ -719,13 +724,14 @@
             this.playerTwoButtonTwo.FlatAppearance.BorderSize = 0;
             this.playerTwoButtonTwo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playerTwoButtonTwo.ForeColor = System.Drawing.Color.Transparent;
-            this.playerTwoButtonTwo.Location = new System.Drawing.Point(343, 530);
+            this.playerTwoButtonTwo.Location = new System.Drawing.Point(344, 301);
             this.playerTwoButtonTwo.Margin = new System.Windows.Forms.Padding(0);
             this.playerTwoButtonTwo.Name = "playerTwoButtonTwo";
             this.playerTwoButtonTwo.Size = new System.Drawing.Size(100, 155);
             this.playerTwoButtonTwo.TabIndex = 32;
             this.playerTwoButtonTwo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.playerTwoButtonTwo.UseVisualStyleBackColor = false;
+            this.playerTwoButtonTwo.Click += new System.EventHandler(this.playerTwoButtonTwo_Click);
             // 
             // playerTwoButtonOne
             // 
@@ -735,13 +741,14 @@
             this.playerTwoButtonOne.FlatAppearance.BorderSize = 0;
             this.playerTwoButtonOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playerTwoButtonOne.ForeColor = System.Drawing.Color.Transparent;
-            this.playerTwoButtonOne.Location = new System.Drawing.Point(207, 530);
+            this.playerTwoButtonOne.Location = new System.Drawing.Point(208, 301);
             this.playerTwoButtonOne.Margin = new System.Windows.Forms.Padding(0);
             this.playerTwoButtonOne.Name = "playerTwoButtonOne";
             this.playerTwoButtonOne.Size = new System.Drawing.Size(100, 155);
             this.playerTwoButtonOne.TabIndex = 31;
             this.playerTwoButtonOne.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.playerTwoButtonOne.UseVisualStyleBackColor = false;
+            this.playerTwoButtonOne.Click += new System.EventHandler(this.playerTwoButtonOne_Click);
             // 
             // playerTwoWinLossRTB
             // 
@@ -868,13 +875,6 @@
             this.Controls.Add(this.playerTwoSquareThreeRTB);
             this.Controls.Add(this.playerTwoSquareTwoRTB);
             this.Controls.Add(this.playerTwoSquareOneRTB);
-            this.Controls.Add(this.playerTwoButtonSeven);
-            this.Controls.Add(this.playerTwoButtonSix);
-            this.Controls.Add(this.playerTwoButtonFive);
-            this.Controls.Add(this.playerTwoButtonFour);
-            this.Controls.Add(this.playerTwoButtonThree);
-            this.Controls.Add(this.playerTwoButtonTwo);
-            this.Controls.Add(this.playerTwoButtonOne);
             this.Controls.Add(this.playerOneSquareSevenRTB);
             this.Controls.Add(this.playerOneButtonSeven);
             this.Controls.Add(this.playerOneSquareSixRTB);
@@ -895,10 +895,17 @@
             this.Controls.Add(this.playerOneAllTimeScoreRTB);
             this.Controls.Add(this.playerOneWinLossRTB);
             this.Controls.Add(this.playerOneNameRTB);
-            this.Controls.Add(this.playerTwoBankRTB);
-            this.Controls.Add(this.playerOneSquareOneRTB);
             this.Controls.Add(this.playerOneBankRTB);
+            this.Controls.Add(this.playerOneSquareOneRTB);
+            this.Controls.Add(this.playerTwoBankRTB);
             this.Controls.Add(this.playerOneButtonOne);
+            this.Controls.Add(this.playerTwoButtonSeven);
+            this.Controls.Add(this.playerTwoButtonSix);
+            this.Controls.Add(this.playerTwoButtonFive);
+            this.Controls.Add(this.playerTwoButtonFour);
+            this.Controls.Add(this.playerTwoButtonThree);
+            this.Controls.Add(this.playerTwoButtonTwo);
+            this.Controls.Add(this.playerTwoButtonOne);
             this.Controls.Add(this.pictureBox1);
             this.MaximumSize = new System.Drawing.Size(1337, 800);
             this.MinimumSize = new System.Drawing.Size(1337, 800);
@@ -912,7 +919,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.RichTextBox playerOneBankRTB;
+        private System.Windows.Forms.RichTextBox playerTwoBankRTB;
         private System.Windows.Forms.RichTextBox playerOneSquareOneRTB;
         private System.Windows.Forms.RichTextBox playerOneSquareTwoRTB;
         private System.Windows.Forms.RichTextBox playerOneSquareThreeRTB;
@@ -920,7 +927,7 @@
         private System.Windows.Forms.RichTextBox playerOneSquareFiveRTB;
         private System.Windows.Forms.RichTextBox playerOneSquareSixRTB;
         private System.Windows.Forms.RichTextBox playerOneSquareSevenRTB;
-        private System.Windows.Forms.RichTextBox playerTwoBankRTB;
+        private System.Windows.Forms.RichTextBox playerOneBankRTB;
         private System.Windows.Forms.RichTextBox playerOneNameRTB;
         private System.Windows.Forms.RichTextBox playerOneWinLossRTB;
         private System.Windows.Forms.RichTextBox playerOneAllTimeScoreRTB;
