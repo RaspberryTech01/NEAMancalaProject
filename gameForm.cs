@@ -25,6 +25,7 @@ namespace Mancala_NEA_Computer_Science_Project
         public UserPoints userOnePoints;
         public UserPoints userTwoPoints;
         bool gameStarted = false;
+        bool gameOver = false;
         int UserTurn;
         public GameForm(string UserID, string Username, string AuthKey, string Wins, string Losses, string TotalScore)
         {
@@ -206,6 +207,7 @@ namespace Mancala_NEA_Computer_Science_Project
             playerOneSquareFiveRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerOneSquareSixRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerOneSquareSevenRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerOneRTBTurn.SelectionAlignment = HorizontalAlignment.Center;
             //Align Text in boxes for User1 and User2
             playerOneBankRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerTwoSquareOneRTB.SelectionAlignment = HorizontalAlignment.Center;
@@ -215,6 +217,7 @@ namespace Mancala_NEA_Computer_Science_Project
             playerTwoSquareFiveRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerTwoSquareSixRTB.SelectionAlignment = HorizontalAlignment.Center;
             playerTwoSquareSevenRTB.SelectionAlignment = HorizontalAlignment.Center;
+            playerTwoRTBTurn.SelectionAlignment = HorizontalAlignment.Center;
         }
         private void NewGame() //starts new game, sets points to 0.
         {
@@ -222,6 +225,8 @@ namespace Mancala_NEA_Computer_Science_Project
             userOnePoints = new UserPoints(scoreSetupOne);
             int[] scoreSetupTwo = new int[] { 0, 4, 4, 4, 4, 4, 4, 4 };
             userTwoPoints = new UserPoints(scoreSetupTwo);
+            UserTurn = 1;
+            gameOver = false;
             RefreshBoard();
         }
         private void GetSavedGame()
@@ -257,13 +262,32 @@ namespace Mancala_NEA_Computer_Science_Project
             playerOneSquareSevenRTB.Text = userOnePoints.ReturnUserHoleSeven();
             playerTwoSquareSevenRTB.Text = userTwoPoints.ReturnUserHoleSeven();
 
+            if(UserTurn == 1)
+            {
+                playerOneRTBTurn.Text = "Player 1's Turn";
+                playerTwoRTBTurn.Text = "";
+            }
+            else if(UserTurn == 2)
+            {
+                playerOneRTBTurn.Text = "";
+                playerTwoRTBTurn.Text = "Player 2's Turn";
+            }
+            if (gameOver)
+            {
+                playerOneRTBTurn.Text = "Game Over";
+                playerTwoRTBTurn.Text = "Game Over";
+            }
             CentreItems();
         }
         private void playerMove(string playerMoving, int shells, int currentPosition)
         {
             if(shells == 0) //if no shells when button is clicked
             {
-
+                return;
+            }
+            else if (gameOver)
+            {
+                return;
             }
             else
             {
@@ -284,16 +308,21 @@ namespace Mancala_NEA_Computer_Science_Project
                     UserTurn = 1;
                 }
 
-                for (int i = 0; i < shells + 1; i++)
+                for (int i = 0; i < shells ; i++)
                 {
                     if (sideOfBoard == 1)
                     {
-                        if(i == shells - 1) //check if last shell is placed in bank
+                        if(i == shells - 1) //check for last shell
                         {
                             if(nextPosition == 8 && playerMoving == "UserOne")
                             {
                                 UserTurn = 1;
                                 userOnePoints.UpdateHole(8, playerMoving);
+                            }
+                            else
+                            {
+                                userOnePoints.UpdateHole(nextPosition, playerMoving);
+                                nextPosition++;
                             }
                             //else if(nextPosition == 0 && playerMoving == "UserTwo")
                             //{
@@ -333,6 +362,11 @@ namespace Mancala_NEA_Computer_Science_Project
                                 UserTurn = 2;
                                 userTwoPoints.UpdateHole(0, playerMoving);
                             }
+                            else
+                            {
+                                userTwoPoints.UpdateHole(nextPosition, playerMoving);
+                                nextPosition++;
+                            }
                         }
                         else if (nextPosition == 0 && playerMoving == "UserTwo")
                         {
@@ -352,11 +386,32 @@ namespace Mancala_NEA_Computer_Science_Project
                             nextPosition--;
                         }
                     }
+                    GameOver();
                     RefreshBoard();
                 }
             }
         }
-
+        private bool GameOver()
+        {
+            if(userOnePoints.ReturnUserHoleOne() == "0" && userOnePoints.ReturnUserHoleTwo() == "0" && userOnePoints.ReturnUserHoleThree() == "0" &&
+                userOnePoints.ReturnUserHoleFour() == "0" && userOnePoints.ReturnUserHoleFive() == "0" && userOnePoints.ReturnUserHoleSix() == "0" &&
+                userOnePoints.ReturnUserHoleSeven() == "0")
+            {
+                gameOver = true;
+                return true;
+            }
+            else if (userTwoPoints.ReturnUserHoleOne() == "0" && userTwoPoints.ReturnUserHoleTwo() == "0" && userTwoPoints.ReturnUserHoleThree() == "0" &&
+                userTwoPoints.ReturnUserHoleFour() == "0" && userTwoPoints.ReturnUserHoleFive() == "0" && userTwoPoints.ReturnUserHoleSix() == "0" &&
+                userTwoPoints.ReturnUserHoleSeven() == "0")
+            {
+                gameOver = true;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         
     }
 }

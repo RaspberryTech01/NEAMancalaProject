@@ -74,6 +74,8 @@
             this.savedGameBtn = new System.Windows.Forms.Button();
             this.rulesBtn = new System.Windows.Forms.Button();
             this.errorBoxRTB = new System.Windows.Forms.RichTextBox();
+            this.playerTwoRTBTurn = new System.Windows.Forms.RichTextBox();
+            this.playerOneRTBTurn = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -855,12 +857,40 @@
             this.errorBoxRTB.TabIndex = 44;
             this.errorBoxRTB.Text = "";
             // 
+            // playerTwoRTBTurn
+            // 
+            this.playerTwoRTBTurn.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.playerTwoRTBTurn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.playerTwoRTBTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerTwoRTBTurn.ForeColor = System.Drawing.Color.Black;
+            this.playerTwoRTBTurn.Location = new System.Drawing.Point(524, 246);
+            this.playerTwoRTBTurn.Name = "playerTwoRTBTurn";
+            this.playerTwoRTBTurn.ReadOnly = true;
+            this.playerTwoRTBTurn.Size = new System.Drawing.Size(216, 30);
+            this.playerTwoRTBTurn.TabIndex = 45;
+            this.playerTwoRTBTurn.Text = "";
+            // 
+            // playerOneRTBTurn
+            // 
+            this.playerOneRTBTurn.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.playerOneRTBTurn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.playerOneRTBTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerOneRTBTurn.ForeColor = System.Drawing.Color.Black;
+            this.playerOneRTBTurn.Location = new System.Drawing.Point(524, 708);
+            this.playerOneRTBTurn.Name = "playerOneRTBTurn";
+            this.playerOneRTBTurn.ReadOnly = true;
+            this.playerOneRTBTurn.Size = new System.Drawing.Size(216, 30);
+            this.playerOneRTBTurn.TabIndex = 46;
+            this.playerOneRTBTurn.Text = "";
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1321, 761);
+            this.Controls.Add(this.playerOneRTBTurn);
+            this.Controls.Add(this.playerTwoRTBTurn);
             this.Controls.Add(this.errorBoxRTB);
             this.Controls.Add(this.rulesBtn);
             this.Controls.Add(this.savedGameBtn);
@@ -964,5 +994,7 @@
         private System.Windows.Forms.Button savedGameBtn;
         private System.Windows.Forms.Button rulesBtn;
         private System.Windows.Forms.RichTextBox errorBoxRTB;
+        private System.Windows.Forms.RichTextBox playerTwoRTBTurn;
+        private System.Windows.Forms.RichTextBox playerOneRTBTurn;
     }
 }
