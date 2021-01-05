@@ -26,6 +26,7 @@ namespace Mancala_NEA_Computer_Science_Project
         public UserPoints userTwoPoints;
         bool gameStarted = false;
         bool gameOver = false;
+        bool captureFunction = false;
         int UserTurn;
         public GameForm(string UserID, string Username, string AuthKey, string Wins, string Losses, string TotalScore)
         {
@@ -156,13 +157,23 @@ namespace Mancala_NEA_Computer_Science_Project
         private void newGameBtn_Click(object sender, EventArgs e)
         {
             NewGame();
-            gameStarted = true;
-            UserTurn = 1;
         }
         private void savedGameBtn_Click(object sender, EventArgs e)
         {
             GetSavedGame();
-            gameStarted = true;
+        }
+        private void captureBtn_Click(object sender, EventArgs e)
+        {
+            if (captureFunction)
+            {
+                captureFunction = false;
+                captureBtn.Text = "Capture Off";
+            }
+            else if (!captureFunction)
+            {
+                captureFunction = true;
+                captureBtn.Text = "Capture On";
+            }
         }
         private void setupUser(string Username, string Wins, string Losses, string TotalScore)
         {
@@ -221,11 +232,12 @@ namespace Mancala_NEA_Computer_Science_Project
         }
         private void NewGame() //starts new game, sets points to 0.
         {
-            int[] scoreSetupOne = new int[] { 0, 4, 4, 4, 4, 4, 4, 4 };
+            int[] scoreSetupOne = new int[] { 0, 14, 4, 4, 4, 4, 4, 4 };
             userOnePoints = new UserPoints(scoreSetupOne);
             int[] scoreSetupTwo = new int[] { 0, 4, 4, 4, 4, 4, 4, 4 };
             userTwoPoints = new UserPoints(scoreSetupTwo);
             UserTurn = 1;
+            gameStarted = true;
             gameOver = false;
             RefreshBoard();
         }
@@ -234,6 +246,7 @@ namespace Mancala_NEA_Computer_Science_Project
             GetUserSavedData getData = new GetUserSavedData(Username, UserID, AuthKey); //getData.
             userOnePoints = new UserPoints(getData.GetUserSave()); //not needed 
             userTwoPoints = new UserPoints(getData.GetAISave());
+            gameStarted = true;
             RefreshBoard();
         }
         private void RefreshBoard()
@@ -314,13 +327,33 @@ namespace Mancala_NEA_Computer_Science_Project
                     {
                         if(i == shells - 1) //check for last shell
                         {
-                            if(nextPosition == 8 && playerMoving == "UserOne")
+                            bool capturePieces = false;
+                            if (captureFunction)
+                            {
+                                if(playerMoving == "UserOne")
+                                {
+                                    if (nextPosition < 8 && userOnePoints.ReturnUserHole(nextPosition) == "0")
+                                    {
+                                        capturePieces = true;
+                                    }
+                                }
+                            }
+
+                            if (nextPosition == 8 && playerMoving == "UserOne")
                             {
                                 UserTurn = 1;
                                 userOnePoints.UpdateHole(8, playerMoving);
                             }
+                            else if(nextPosition == 8 && playerMoving == "UserTwo")
+                            {
+                                userTwoPoints.UpdateHole(7, playerMoving);
+                            }
                             else
                             {
+                                if (capturePieces)
+                                {
+
+                                }
                                 userOnePoints.UpdateHole(nextPosition, playerMoving);
                                 nextPosition++;
                             }
@@ -361,6 +394,10 @@ namespace Mancala_NEA_Computer_Science_Project
                             {
                                 UserTurn = 2;
                                 userTwoPoints.UpdateHole(0, playerMoving);
+                            }
+                            else if(nextPosition == 0 && playerMoving == "UserOne")
+                            {
+                                userOnePoints.UpdateHole(1, playerMoving);
                             }
                             else
                             {
@@ -412,6 +449,7 @@ namespace Mancala_NEA_Computer_Science_Project
                 return false;
             }
         }
+
         
     }
 }

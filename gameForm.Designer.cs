@@ -76,6 +76,7 @@
             this.errorBoxRTB = new System.Windows.Forms.RichTextBox();
             this.playerTwoRTBTurn = new System.Windows.Forms.RichTextBox();
             this.playerOneRTBTurn = new System.Windows.Forms.RichTextBox();
+            this.captureBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -827,7 +828,7 @@
             // 
             this.savedGameBtn.BackColor = System.Drawing.Color.YellowGreen;
             this.savedGameBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.savedGameBtn.Location = new System.Drawing.Point(613, 12);
+            this.savedGameBtn.Location = new System.Drawing.Point(748, 12);
             this.savedGameBtn.Name = "savedGameBtn";
             this.savedGameBtn.Size = new System.Drawing.Size(161, 36);
             this.savedGameBtn.TabIndex = 42;
@@ -883,12 +884,25 @@
             this.playerOneRTBTurn.TabIndex = 46;
             this.playerOneRTBTurn.Text = "";
             // 
+            // captureBtn
+            // 
+            this.captureBtn.BackColor = System.Drawing.Color.YellowGreen;
+            this.captureBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.captureBtn.Location = new System.Drawing.Point(614, 12);
+            this.captureBtn.Name = "captureBtn";
+            this.captureBtn.Size = new System.Drawing.Size(100, 36);
+            this.captureBtn.TabIndex = 47;
+            this.captureBtn.Text = "Capture Off";
+            this.captureBtn.UseVisualStyleBackColor = false;
+            this.captureBtn.Click += new System.EventHandler(this.captureBtn_Click);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1321, 761);
+            this.Controls.Add(this.captureBtn);
             this.Controls.Add(this.playerOneRTBTurn);
             this.Controls.Add(this.playerTwoRTBTurn);
             this.Controls.Add(this.errorBoxRTB);
@@ -996,5 +1010,6 @@
         private System.Windows.Forms.RichTextBox errorBoxRTB;
         private System.Windows.Forms.RichTextBox playerTwoRTBTurn;
         private System.Windows.Forms.RichTextBox playerOneRTBTurn;
+        private System.Windows.Forms.Button captureBtn;
     }
 }

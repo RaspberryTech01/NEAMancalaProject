@@ -58,6 +58,10 @@ public class UserPoints
 	{
 		return UserScores[7].ToString();
 	}
+	public string ReturnUserHole(int holeNum)
+	{
+		return UserScores[holeNum].ToString();
+	}
 	public string UpdateHole(int holeNum, string UserMove)
     {
 		if (holeNum == 8 && UserMove == "UserOne")
