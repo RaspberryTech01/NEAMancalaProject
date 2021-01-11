@@ -79,5 +79,15 @@ namespace Mancala_NEA_Computer_Science_Project.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rulesGameForm {
+            get {
+                object obj = ResourceManager.GetObject("rulesGameForm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

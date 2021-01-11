@@ -47,9 +47,10 @@
             // 
             // rulesPictureBox
             // 
-            this.rulesPictureBox.Location = new System.Drawing.Point(508, 76);
+            this.rulesPictureBox.Image = global::Mancala_NEA_Computer_Science_Project.Properties.Resources.rulesGameForm;
+            this.rulesPictureBox.Location = new System.Drawing.Point(531, 12);
             this.rulesPictureBox.Name = "rulesPictureBox";
-            this.rulesPictureBox.Size = new System.Drawing.Size(763, 247);
+            this.rulesPictureBox.Size = new System.Drawing.Size(700, 418);
             this.rulesPictureBox.TabIndex = 1;
             this.rulesPictureBox.TabStop = false;
             // 
@@ -61,6 +62,8 @@
             this.ClientSize = new System.Drawing.Size(1316, 449);
             this.Controls.Add(this.rulesPictureBox);
             this.Controls.Add(this.rulesRTB);
+            this.MaximumSize = new System.Drawing.Size(1332, 488);
+            this.MinimumSize = new System.Drawing.Size(1332, 488);
             this.Name = "RulesForm";
             this.Text = "RulesForm";
             ((System.ComponentModel.ISupportInitialize)(this.rulesPictureBox)).EndInit();

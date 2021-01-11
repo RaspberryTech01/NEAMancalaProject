@@ -156,7 +156,9 @@ namespace Mancala_NEA_Computer_Science_Project
         }
         private void newGameBtn_Click(object sender, EventArgs e)
         {
-            NewGame();
+            AIPlayerGameBtn.Visible = true;
+            twoPlayerGameBtn.Visible = true;
+            newGameBtn.Visible = false;
         }
         private void savedGameBtn_Click(object sender, EventArgs e)
         {
@@ -174,6 +176,18 @@ namespace Mancala_NEA_Computer_Science_Project
                 captureFunction = true;
                 captureBtn.Text = "Capture On";
             }
+        }
+        private void twoPlayerGameBtn_Click(object sender, EventArgs e)
+        {
+            NewGame();
+            AIPlayerGameBtn.Visible = false;
+            twoPlayerGameBtn.Visible = false;
+            newGameBtn.Visible = true;
+        }
+
+        private void AIPlayerGameBtn_Click(object sender, EventArgs e)
+        {
+
         }
         private void setupUser(string Username, string Wins, string Losses, string TotalScore)
         {
@@ -232,7 +246,7 @@ namespace Mancala_NEA_Computer_Science_Project
         }
         private void NewGame() //starts new game, sets points to 0.
         {
-            int[] scoreSetupOne = new int[] { 0, 14, 4, 4, 4, 4, 4, 4 };
+            int[] scoreSetupOne = new int[] { 0, 4, 4, 4, 4, 4, 4, 4 };
             userOnePoints = new UserPoints(scoreSetupOne);
             int[] scoreSetupTwo = new int[] { 0, 4, 4, 4, 4, 4, 4, 4 };
             userTwoPoints = new UserPoints(scoreSetupTwo);
@@ -275,7 +289,10 @@ namespace Mancala_NEA_Computer_Science_Project
             playerOneSquareSevenRTB.Text = userOnePoints.ReturnUserHoleSeven();
             playerTwoSquareSevenRTB.Text = userTwoPoints.ReturnUserHoleSeven();
 
-            if(UserTurn == 1)
+            playerOneCurrentScoreRTB.Text = userOnePoints.ReturnUserBank();
+            playerTwoCurrentScoreRTB.Text = userTwoPoints.ReturnUserBank();
+
+            if (UserTurn == 1)
             {
                 playerOneRTBTurn.Text = "Player 1's Turn";
                 playerTwoRTBTurn.Text = "";
@@ -352,16 +369,16 @@ namespace Mancala_NEA_Computer_Science_Project
                             {
                                 if (capturePieces)
                                 {
-
+                                    if(playerMoving == "UserOne")
+                                    {
+                                        string shellCapture = userTwoPoints.ReturnUserHole(nextPosition);
+                                        userOnePoints.UpdateBank(shellCapture);
+                                        userTwoPoints.RemoveShells(nextPosition);
+                                    }
                                 }
                                 userOnePoints.UpdateHole(nextPosition, playerMoving);
                                 nextPosition++;
                             }
-                            //else if(nextPosition == 0 && playerMoving == "UserTwo")
-                            //{
-                            //    UserTurn = 2;
-                            //    userTwoPoints.UpdateHole(7, playerMoving);
-                            //}
                         }
                         else if (nextPosition == 8 && playerMoving == "UserOne") //check if next shells goes in the bank for that player or skips opposing team bank
                         {
@@ -385,11 +402,18 @@ namespace Mancala_NEA_Computer_Science_Project
                     {
                         if (i == shells - 1) //check if last shell is placed in bank
                         {
-                            //if (nextPosition == 8 && playerMoving == "UserOne")
-                            //{
-                            //    UserTurn = 1;
-                            //    userOnePoints.UpdateHole(8, playerMoving);
-                            //}
+                            bool capturePieces = false;
+                            if (captureFunction)
+                            {
+                                if (playerMoving == "UserTwo")
+                                {
+                                    if (nextPosition < 8 && userTwoPoints.ReturnUserHole(nextPosition) == "0")
+                                    {
+                                        capturePieces = true;
+                                    }
+                                }
+                            }
+
                             if (nextPosition == 0 && playerMoving == "UserTwo")
                             {
                                 UserTurn = 2;
@@ -401,6 +425,15 @@ namespace Mancala_NEA_Computer_Science_Project
                             }
                             else
                             {
+                                if (capturePieces)
+                                {
+                                    if (playerMoving == "UserTwo")
+                                    {
+                                        string shellCapture = userOnePoints.ReturnUserHole(nextPosition);
+                                        userTwoPoints.UpdateBank(shellCapture);
+                                        userOnePoints.RemoveShells(nextPosition);
+                                    }
+                                }
                                 userTwoPoints.UpdateHole(nextPosition, playerMoving);
                                 nextPosition++;
                             }

@@ -77,6 +77,9 @@
             this.playerTwoRTBTurn = new System.Windows.Forms.RichTextBox();
             this.playerOneRTBTurn = new System.Windows.Forms.RichTextBox();
             this.captureBtn = new System.Windows.Forms.Button();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.twoPlayerGameBtn = new System.Windows.Forms.Button();
+            this.AIPlayerGameBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -465,15 +468,15 @@
             this.playerTwoCurrentScoreRTB.DetectUrls = false;
             this.playerTwoCurrentScoreRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerTwoCurrentScoreRTB.HideSelection = false;
-            this.playerTwoCurrentScoreRTB.Location = new System.Drawing.Point(1128, 102);
+            this.playerTwoCurrentScoreRTB.Location = new System.Drawing.Point(1275, 102);
             this.playerTwoCurrentScoreRTB.Multiline = false;
             this.playerTwoCurrentScoreRTB.Name = "playerTwoCurrentScoreRTB";
             this.playerTwoCurrentScoreRTB.ReadOnly = true;
             this.playerTwoCurrentScoreRTB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.playerTwoCurrentScoreRTB.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.playerTwoCurrentScoreRTB.Size = new System.Drawing.Size(181, 24);
+            this.playerTwoCurrentScoreRTB.Size = new System.Drawing.Size(34, 24);
             this.playerTwoCurrentScoreRTB.TabIndex = 23;
-            this.playerTwoCurrentScoreRTB.Text = "Current Score: 0";
+            this.playerTwoCurrentScoreRTB.Text = "0";
             // 
             // playerTwoAllTimeScoreRTB
             // 
@@ -851,7 +854,7 @@
             // errorBoxRTB
             // 
             this.errorBoxRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.errorBoxRTB.Location = new System.Drawing.Point(343, 71);
+            this.errorBoxRTB.Location = new System.Drawing.Point(380, 106);
             this.errorBoxRTB.Name = "errorBoxRTB";
             this.errorBoxRTB.ReadOnly = true;
             this.errorBoxRTB.Size = new System.Drawing.Size(431, 87);
@@ -896,12 +899,56 @@
             this.captureBtn.UseVisualStyleBackColor = false;
             this.captureBtn.Click += new System.EventHandler(this.captureBtn_Click);
             // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox2.DetectUrls = false;
+            this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox2.HideSelection = false;
+            this.richTextBox2.Location = new System.Drawing.Point(1187, 101);
+            this.richTextBox2.Multiline = false;
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
+            this.richTextBox2.Size = new System.Drawing.Size(109, 24);
+            this.richTextBox2.TabIndex = 48;
+            this.richTextBox2.Text = "Current Score:";
+            // 
+            // twoPlayerGameBtn
+            // 
+            this.twoPlayerGameBtn.BackColor = System.Drawing.Color.YellowGreen;
+            this.twoPlayerGameBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.twoPlayerGameBtn.Location = new System.Drawing.Point(411, 64);
+            this.twoPlayerGameBtn.Name = "twoPlayerGameBtn";
+            this.twoPlayerGameBtn.Size = new System.Drawing.Size(100, 36);
+            this.twoPlayerGameBtn.TabIndex = 49;
+            this.twoPlayerGameBtn.Text = "Two Player";
+            this.twoPlayerGameBtn.UseVisualStyleBackColor = false;
+            this.twoPlayerGameBtn.Visible = false;
+            this.twoPlayerGameBtn.Click += new System.EventHandler(this.twoPlayerGameBtn_Click);
+            // 
+            // AIPlayerGameBtn
+            // 
+            this.AIPlayerGameBtn.BackColor = System.Drawing.Color.YellowGreen;
+            this.AIPlayerGameBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AIPlayerGameBtn.Location = new System.Drawing.Point(539, 64);
+            this.AIPlayerGameBtn.Name = "AIPlayerGameBtn";
+            this.AIPlayerGameBtn.Size = new System.Drawing.Size(100, 36);
+            this.AIPlayerGameBtn.TabIndex = 50;
+            this.AIPlayerGameBtn.Text = "AI Player";
+            this.AIPlayerGameBtn.UseVisualStyleBackColor = false;
+            this.AIPlayerGameBtn.Visible = false;
+            this.AIPlayerGameBtn.Click += new System.EventHandler(this.AIPlayerGameBtn_Click);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1321, 761);
+            this.Controls.Add(this.AIPlayerGameBtn);
+            this.Controls.Add(this.twoPlayerGameBtn);
+            this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.captureBtn);
             this.Controls.Add(this.playerOneRTBTurn);
             this.Controls.Add(this.playerTwoRTBTurn);
@@ -1011,5 +1058,8 @@
         private System.Windows.Forms.RichTextBox playerTwoRTBTurn;
         private System.Windows.Forms.RichTextBox playerOneRTBTurn;
         private System.Windows.Forms.Button captureBtn;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Button twoPlayerGameBtn;
+        private System.Windows.Forms.Button AIPlayerGameBtn;
     }
 }

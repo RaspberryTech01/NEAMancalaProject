@@ -78,6 +78,10 @@ public class UserPoints
 		}
 		return "done";
     }
+	public void UpdateBank(string shellNum)
+    {
+		UserScores[0] = UserScores[0] + int.Parse(shellNum);
+    }
 	public void RemoveShells(int holeNum)
     {
 		UserScores[holeNum] = 0;

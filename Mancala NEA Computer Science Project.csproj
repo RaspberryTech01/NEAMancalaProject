@@ -152,6 +152,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\rulesGameForm.png" />
     <None Include="Resources\gameFormBoard.png" />
     <Content Include="Resources\gameFormBoard.svg" />
     <Content Include="Resources\mancalaButton.png" />
