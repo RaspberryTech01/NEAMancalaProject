@@ -121,6 +121,7 @@
     <Compile Include="SerializationAuth.cs" />
     <Compile Include="SerializationGetInfo.cs" />
     <Compile Include="SerializationResponse.cs" />
+    <Compile Include="SerializationUpdateData.cs" />
     <Compile Include="UserInfoSplit.cs" />
     <Compile Include="UserPoints.cs" />
     <EmbeddedResource Include="Form1.resx">

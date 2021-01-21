@@ -62,7 +62,7 @@ public class UserPoints
 	{
 		return UserScores[holeNum].ToString();
 	}
-	public string UpdateHole(int holeNum, string UserMove)
+	public async Task <string> UpdateHole(int holeNum, string UserMove)
     {
 		if (holeNum == 8 && UserMove == "UserOne")
 		{
@@ -76,6 +76,7 @@ public class UserPoints
 		{
 			UserScores[holeNum] = UserScores[holeNum] + 1;
 		}
+		
 		return "done";
     }
 	public void UpdateBank(string shellNum)

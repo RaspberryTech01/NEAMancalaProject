@@ -14,7 +14,7 @@ namespace Mancala_NEA_Computer_Science_Project
             this.arrayAfterSplit = SplitStringIntoArray(strToBeSplit);
         }
 
-        private int[] SplitStringIntoArray (string strToBeSplit)
+        private int[] SplitStringIntoArray(string strToBeSplit)
         {
             int[] arrayAfterSplit = strToBeSplit.Split(',').Select(int.Parse).ToArray();
             return arrayAfterSplit;
