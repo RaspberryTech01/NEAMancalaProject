@@ -80,6 +80,10 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.twoPlayerGameBtn = new System.Windows.Forms.Button();
             this.AIPlayerGameBtn = new System.Windows.Forms.Button();
+            this.saveGameBtn = new System.Windows.Forms.Button();
+            this.AIPlayerSavedBtn = new System.Windows.Forms.Button();
+            this.twoPlayerSavedBtn = new System.Windows.Forms.Button();
+            this.doAITurnBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -819,7 +823,7 @@
             // 
             this.newGameBtn.BackColor = System.Drawing.Color.YellowGreen;
             this.newGameBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newGameBtn.Location = new System.Drawing.Point(478, 12);
+            this.newGameBtn.Location = new System.Drawing.Point(441, 12);
             this.newGameBtn.Name = "newGameBtn";
             this.newGameBtn.Size = new System.Drawing.Size(100, 36);
             this.newGameBtn.TabIndex = 41;
@@ -831,7 +835,7 @@
             // 
             this.savedGameBtn.BackColor = System.Drawing.Color.YellowGreen;
             this.savedGameBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.savedGameBtn.Location = new System.Drawing.Point(748, 12);
+            this.savedGameBtn.Location = new System.Drawing.Point(711, 12);
             this.savedGameBtn.Name = "savedGameBtn";
             this.savedGameBtn.Size = new System.Drawing.Size(161, 36);
             this.savedGameBtn.TabIndex = 42;
@@ -843,7 +847,7 @@
             // 
             this.rulesBtn.BackColor = System.Drawing.Color.YellowGreen;
             this.rulesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rulesBtn.Location = new System.Drawing.Point(343, 12);
+            this.rulesBtn.Location = new System.Drawing.Point(306, 12);
             this.rulesBtn.Name = "rulesBtn";
             this.rulesBtn.Size = new System.Drawing.Size(100, 36);
             this.rulesBtn.TabIndex = 43;
@@ -857,7 +861,7 @@
             this.errorBoxRTB.Location = new System.Drawing.Point(380, 106);
             this.errorBoxRTB.Name = "errorBoxRTB";
             this.errorBoxRTB.ReadOnly = true;
-            this.errorBoxRTB.Size = new System.Drawing.Size(431, 87);
+            this.errorBoxRTB.Size = new System.Drawing.Size(431, 70);
             this.errorBoxRTB.TabIndex = 44;
             this.errorBoxRTB.Text = "";
             // 
@@ -891,7 +895,7 @@
             // 
             this.captureBtn.BackColor = System.Drawing.Color.YellowGreen;
             this.captureBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.captureBtn.Location = new System.Drawing.Point(614, 12);
+            this.captureBtn.Location = new System.Drawing.Point(577, 12);
             this.captureBtn.Name = "captureBtn";
             this.captureBtn.Size = new System.Drawing.Size(100, 36);
             this.captureBtn.TabIndex = 47;
@@ -918,7 +922,7 @@
             // 
             this.twoPlayerGameBtn.BackColor = System.Drawing.Color.YellowGreen;
             this.twoPlayerGameBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.twoPlayerGameBtn.Location = new System.Drawing.Point(411, 64);
+            this.twoPlayerGameBtn.Location = new System.Drawing.Point(374, 64);
             this.twoPlayerGameBtn.Name = "twoPlayerGameBtn";
             this.twoPlayerGameBtn.Size = new System.Drawing.Size(100, 36);
             this.twoPlayerGameBtn.TabIndex = 49;
@@ -931,7 +935,7 @@
             // 
             this.AIPlayerGameBtn.BackColor = System.Drawing.Color.YellowGreen;
             this.AIPlayerGameBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AIPlayerGameBtn.Location = new System.Drawing.Point(539, 64);
+            this.AIPlayerGameBtn.Location = new System.Drawing.Point(502, 64);
             this.AIPlayerGameBtn.Name = "AIPlayerGameBtn";
             this.AIPlayerGameBtn.Size = new System.Drawing.Size(100, 36);
             this.AIPlayerGameBtn.TabIndex = 50;
@@ -940,12 +944,67 @@
             this.AIPlayerGameBtn.Visible = false;
             this.AIPlayerGameBtn.Click += new System.EventHandler(this.AIPlayerGameBtn_Click);
             // 
+            // saveGameBtn
+            // 
+            this.saveGameBtn.BackColor = System.Drawing.Color.YellowGreen;
+            this.saveGameBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveGameBtn.Location = new System.Drawing.Point(909, 12);
+            this.saveGameBtn.Name = "saveGameBtn";
+            this.saveGameBtn.Size = new System.Drawing.Size(100, 36);
+            this.saveGameBtn.TabIndex = 51;
+            this.saveGameBtn.Text = "Save Game";
+            this.saveGameBtn.UseVisualStyleBackColor = false;
+            this.saveGameBtn.Click += new System.EventHandler(this.saveGameBtn_Click);
+            // 
+            // AIPlayerSavedBtn
+            // 
+            this.AIPlayerSavedBtn.BackColor = System.Drawing.Color.YellowGreen;
+            this.AIPlayerSavedBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AIPlayerSavedBtn.Location = new System.Drawing.Point(808, 63);
+            this.AIPlayerSavedBtn.Name = "AIPlayerSavedBtn";
+            this.AIPlayerSavedBtn.Size = new System.Drawing.Size(100, 36);
+            this.AIPlayerSavedBtn.TabIndex = 53;
+            this.AIPlayerSavedBtn.Text = "AI Player";
+            this.AIPlayerSavedBtn.UseVisualStyleBackColor = false;
+            this.AIPlayerSavedBtn.Visible = false;
+            this.AIPlayerSavedBtn.Click += new System.EventHandler(this.AIPlayerSavedBtn_Click);
+            // 
+            // twoPlayerSavedBtn
+            // 
+            this.twoPlayerSavedBtn.BackColor = System.Drawing.Color.YellowGreen;
+            this.twoPlayerSavedBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.twoPlayerSavedBtn.Location = new System.Drawing.Point(680, 63);
+            this.twoPlayerSavedBtn.Name = "twoPlayerSavedBtn";
+            this.twoPlayerSavedBtn.Size = new System.Drawing.Size(100, 36);
+            this.twoPlayerSavedBtn.TabIndex = 52;
+            this.twoPlayerSavedBtn.Text = "Two Player";
+            this.twoPlayerSavedBtn.UseVisualStyleBackColor = false;
+            this.twoPlayerSavedBtn.Visible = false;
+            this.twoPlayerSavedBtn.Click += new System.EventHandler(this.twoPlayerSavedBtn_Click);
+            // 
+            // doAITurnBtn
+            // 
+            this.doAITurnBtn.BackColor = System.Drawing.Color.Aquamarine;
+            this.doAITurnBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.doAITurnBtn.Location = new System.Drawing.Point(577, 182);
+            this.doAITurnBtn.Name = "doAITurnBtn";
+            this.doAITurnBtn.Size = new System.Drawing.Size(100, 45);
+            this.doAITurnBtn.TabIndex = 54;
+            this.doAITurnBtn.Text = "Click To Do AI Turn";
+            this.doAITurnBtn.UseVisualStyleBackColor = false;
+            this.doAITurnBtn.Visible = false;
+            this.doAITurnBtn.Click += new System.EventHandler(this.doAITurnBtn_Click);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1321, 761);
+            this.Controls.Add(this.doAITurnBtn);
+            this.Controls.Add(this.AIPlayerSavedBtn);
+            this.Controls.Add(this.twoPlayerSavedBtn);
+            this.Controls.Add(this.saveGameBtn);
             this.Controls.Add(this.AIPlayerGameBtn);
             this.Controls.Add(this.twoPlayerGameBtn);
             this.Controls.Add(this.richTextBox2);
@@ -1061,5 +1120,9 @@
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Button twoPlayerGameBtn;
         private System.Windows.Forms.Button AIPlayerGameBtn;
+        private System.Windows.Forms.Button saveGameBtn;
+        private System.Windows.Forms.Button AIPlayerSavedBtn;
+        private System.Windows.Forms.Button twoPlayerSavedBtn;
+        private System.Windows.Forms.Button doAITurnBtn;
     }
 }

@@ -130,10 +130,10 @@ The game begins with one player picking up all of the shells in any one of the h
 Moving counter-clockwise, the player deposits one of the shells in each hole until the stones run out.
 
 1. If you run into your own bank, deposit one piece in it.
-If you run into your opponent's store, skip it.
-2. If the last shell you drop is in your own store, you get a free turn.
+If you run into your opponent's bank, skip it.
+2. If the last shell you drop is in your own bank, you get a free turn.
 3. If the last shell you drop is in an empty hole on your side, you capture that shell and any shells in the hole directly opposite.
-4. Captured shells are placed in the bank 
+4. Captured shells are placed in the bank.
 
 If playing with the the capture function, then if the last shell that is placed in a hole falls in a hole with no shells present in it (and is on the side of the board the user playing, 
 the shells in the opposite side is captured and placed into the bank. 

@@ -105,49 +105,49 @@ namespace Mancala_NEA_Computer_Science_Project
         }
         private void playerTwoButtonOne_Click(object sender, EventArgs e)
         {
-            if (gameStarted && UserTurn == 2)
+            if (gameStarted && UserTurn == 2 && !AIPlaying)
             {
                 playerMoveAsync("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleOne()), 1);
             }
         }
         private void playerTwoButtonTwo_Click(object sender, EventArgs e)
         {
-            if (gameStarted && UserTurn == 2)
+            if (gameStarted && UserTurn == 2 && !AIPlaying)
             {
                 playerMoveAsync("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleTwo()), 2);
             }
         }
         private void playerTwoButtonThree_Click(object sender, EventArgs e)
         {
-            if (gameStarted && UserTurn == 2)
+            if (gameStarted && UserTurn == 2 && !AIPlaying)
             {
                 playerMoveAsync("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleThree()), 3);
             }
         }
         private void playerTwoButtonFour_Click(object sender, EventArgs e)
         {
-            if (gameStarted && UserTurn == 2)
+            if (gameStarted && UserTurn == 2 && !AIPlaying)
             {
                 playerMoveAsync("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleFour()), 4);
             }
         }
         private void playerTwoButtonFive_Click(object sender, EventArgs e)
         {
-            if (gameStarted && UserTurn == 2)
+            if (gameStarted && UserTurn == 2 && !AIPlaying)
             {
                 playerMoveAsync("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleFive()), 5);
             }
         }
         private void playerTwoButtonSix_Click(object sender, EventArgs e)
         {
-            if (gameStarted && UserTurn == 2)
+            if (gameStarted && UserTurn == 2 && !AIPlaying)
             {
                 playerMoveAsync("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleSix()), 6);
             }
         }
         private void playerTwoButtonSeven_Click(object sender, EventArgs e)
         {
-            if (gameStarted && UserTurn == 2)
+            if (gameStarted && UserTurn == 2 && !AIPlaying)
             {
                 playerMoveAsync("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleSeven()), 7);
             }
@@ -162,10 +162,21 @@ namespace Mancala_NEA_Computer_Science_Project
             AIPlayerGameBtn.Visible = true;
             twoPlayerGameBtn.Visible = true;
             newGameBtn.Visible = false;
+
+            twoPlayerSavedBtn.Visible = false;
+            AIPlayerSavedBtn.Visible = false;
+            savedGameBtn.Visible = true;
         }
         private void savedGameBtn_Click(object sender, EventArgs e)
         {
-            GetSavedGame();
+            twoPlayerSavedBtn.Visible = true;
+            AIPlayerSavedBtn.Visible = true;
+            savedGameBtn.Visible = false;
+
+            twoPlayerGameBtn.Visible = false;
+            AIPlayerGameBtn.Visible = false;
+            newGameBtn.Visible = true;
+
         }
         private void captureBtn_Click(object sender, EventArgs e)
         {
@@ -188,6 +199,7 @@ namespace Mancala_NEA_Computer_Science_Project
             twoPlayerGameBtn.Visible = false;
             newGameBtn.Visible = true;
             playerTwoNameRTB.Text = "Player 2";
+            doAITurnBtn.Visible = false;
         }
 
         private void AIPlayerGameBtn_Click(object sender, EventArgs e)
@@ -198,6 +210,39 @@ namespace Mancala_NEA_Computer_Science_Project
             AIPlayerGameBtn.Visible = false;
             twoPlayerGameBtn.Visible = false;
             newGameBtn.Visible = true;
+            doAITurnBtn.Visible = true;
+        }
+        private void twoPlayerSavedBtn_Click(object sender, EventArgs e)
+        {
+            savedGameBtn.Visible = true;
+            twoPlayerSavedBtn.Visible = false;
+            AIPlayerSavedBtn.Visible = false;
+            GetSavedGameAsync(Username, UserID, AuthKey);
+            doAITurnBtn.Visible = false;
+            playerTwoNameRTB.Text = "Player 2";
+            AIPlaying = false;
+        }
+
+        private void AIPlayerSavedBtn_Click(object sender, EventArgs e)
+        {
+            savedGameBtn.Visible = true;
+            twoPlayerSavedBtn.Visible = false;
+            AIPlayerSavedBtn.Visible = false;
+            GetSavedGameAsync(Username, UserID, AuthKey);
+            doAITurnBtn.Visible = true;
+            playerTwoNameRTB.Text = "AI Player";
+            AIPlaying = true;
+        }
+        private void doAITurnBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void saveGameBtn_Click(object sender, EventArgs e)
+        {
+            if (!gameOver)
+            {
+                SaveGameNow(Username, UserID, AuthKey);
+            }
         }
         private void setupUser(string Username, string Wins, string Losses, string TotalScore)
         {
@@ -257,9 +302,9 @@ namespace Mancala_NEA_Computer_Science_Project
         private void NewGame() //starts new game, sets points to 0.
         {
             //int[] scoreSetupOne = new int[] { 0, 4, 4, 4, 4, 4, 4, 4 };
-            int[] scoreSetupOne = new int[] { 0, 0, 0, 0, 0, 0, 0, 4 };
+            int[] scoreSetupOne = new int[] { 0, 0, 0, 0, 0, 0, 4, 4 };
             userOnePoints = new UserPoints(scoreSetupOne);
-           // int[] scoreSetupTwo = new int[] { 0, 4, 4, 4, 4, 4, 4, 4 };
+            //int[] scoreSetupTwo = new int[] { 0, 4, 4, 4, 4, 4, 4, 4 };
             int[] scoreSetupTwo = new int[] { 0, 0, 0, 0, 0, 0, 0, 4 };
 
             userTwoPoints = new UserPoints(scoreSetupTwo);
@@ -269,11 +314,54 @@ namespace Mancala_NEA_Computer_Science_Project
             sentFinishedData = false;
             RefreshBoard();
         }
-        private void GetSavedGame()
+        private async Task SaveGameNow(string Username, string UserID, string AuthKey)
         {
-            GetUserSavedData getData = new GetUserSavedData(Username, UserID, AuthKey); //getData.
-            userOnePoints = new UserPoints(getData.GetUserSave()); //not needed 
-            userTwoPoints = new UserPoints(getData.GetAISave());
+            SerializationSaveGame serialSaveGame = new SerializationSaveGame(Username, UserID, AuthKey, userOnePoints.ReturnArray(), userTwoPoints.ReturnArray(), UserTurn);
+            string jsonString = JsonConvert.SerializeObject(serialSaveGame);
+            var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+            var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/savegame", content);
+            var RString = await result.Content.ReadAsStringAsync();
+            SerializationSaveGame deserialObj = JsonConvert.DeserializeObject<SerializationSaveGame>(RString);
+
+        }
+        private async Task GetSavedGameAsync(string Username, string UserID, string AuthKey)
+        {
+            int[] UserSave;
+            int[] AISave;
+            //GetUserSavedData getData = new GetUserSavedData(Username, UserID, AuthKey); //getData.
+
+            SerializationGetInfo serialGetInfo = new SerializationGetInfo(Username, UserID, AuthKey);
+            string jsonString = JsonConvert.SerializeObject(serialGetInfo);
+            var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+            var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/getinfo", content);
+            var RString = await result.Content.ReadAsStringAsync();
+            SerializationGetInfo deserialObj = JsonConvert.DeserializeObject<SerializationGetInfo>(RString);
+            string userSaveString = deserialObj.UserSave;
+            string AISaveString = deserialObj.AISave;
+            string WhichTurn = deserialObj.WhichTurn;
+            UserInfoSplit UserSplitSave = new UserInfoSplit(userSaveString);
+            UserInfoSplit AISplitSave = new UserInfoSplit(AISaveString);
+            UserSave = UserSplitSave.SendSplit();
+            AISave = AISplitSave.SendSplit();
+            
+            userOnePoints = new UserPoints(UserSave); //not needed 
+            userTwoPoints = new UserPoints(AISave);
+
+            if(WhichTurn == "1")
+            {
+                UserTurn = 1;
+            }
+            else if(WhichTurn == "2")
+            {
+                UserTurn = 2;
+            }
+            else
+            {
+                errorBoxRTB.Text = "No user turn found. Reverting to user one.";
+                UserTurn = 1;
+            }
             gameStarted = true;
             RefreshBoard();
         }
@@ -550,5 +638,7 @@ namespace Mancala_NEA_Computer_Science_Project
                 return "false";
             }
         }
+
+        
     }
 }

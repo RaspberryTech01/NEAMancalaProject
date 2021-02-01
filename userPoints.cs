@@ -12,7 +12,6 @@ using Newtonsoft.Json;
 
 public class UserPoints
 {
-	
 	private int[] UserScores = new int[8];
 	
 	public UserPoints(int[] Scores)
@@ -62,7 +61,7 @@ public class UserPoints
 	{
 		return UserScores[holeNum].ToString();
 	}
-	public async Task <string> UpdateHole(int holeNum, string UserMove)
+	public async Task <string> UpdateHole(int holeNum, string UserMove)// increment hole by one
     {
 		if (holeNum == 8 && UserMove == "UserOne")
 		{
@@ -79,13 +78,16 @@ public class UserPoints
 		
 		return "done";
     }
-	public void UpdateBank(string shellNum)
+	public void UpdateBank(string shellNum) // update player bank based on shell input
     {
 		UserScores[0] = UserScores[0] + int.Parse(shellNum);
     }
-	public void RemoveShells(int holeNum)
+	public void RemoveShells(int holeNum) //set shell box to 0
     {
 		UserScores[holeNum] = 0;
     }
-	//add functions to return user info
+	public int[] ReturnArray()
+    {
+		return UserScores;
+    }
 }

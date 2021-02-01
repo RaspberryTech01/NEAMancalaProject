@@ -8,6 +8,7 @@ public class SerializationGetInfo
 {
 	public string UserSave { get; set; }
 	public string AISave { get; set; }
+	public string WhichTurn { get; set; }
 
 	public string Username { get; set; }
 	public string UserID { get; set; }

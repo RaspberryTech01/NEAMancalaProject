@@ -119,6 +119,7 @@
       <DependentUpon>RulesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SerializationAuth.cs" />
+    <Compile Include="SerializationSaveGame.cs" />
     <Compile Include="SerializationGetInfo.cs" />
     <Compile Include="SerializationResponse.cs" />
     <Compile Include="SerializationUpdateData.cs" />
