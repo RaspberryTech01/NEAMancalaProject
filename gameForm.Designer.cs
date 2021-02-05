@@ -84,6 +84,7 @@
             this.AIPlayerSavedBtn = new System.Windows.Forms.Button();
             this.twoPlayerSavedBtn = new System.Windows.Forms.Button();
             this.doAITurnBtn = new System.Windows.Forms.Button();
+            this.AIModeBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -986,14 +987,27 @@
             // 
             this.doAITurnBtn.BackColor = System.Drawing.Color.Aquamarine;
             this.doAITurnBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doAITurnBtn.Location = new System.Drawing.Point(577, 182);
+            this.doAITurnBtn.Location = new System.Drawing.Point(524, 182);
             this.doAITurnBtn.Name = "doAITurnBtn";
             this.doAITurnBtn.Size = new System.Drawing.Size(100, 45);
             this.doAITurnBtn.TabIndex = 54;
             this.doAITurnBtn.Text = "Click To Do AI Turn";
             this.doAITurnBtn.UseVisualStyleBackColor = false;
             this.doAITurnBtn.Visible = false;
-            this.doAITurnBtn.Click += new System.EventHandler(this.doAITurnBtn_Click);
+            this.doAITurnBtn.Click += new System.EventHandler(this.doAITurnBtn_ClickAsync);
+            // 
+            // AIModeBtn
+            // 
+            this.AIModeBtn.BackColor = System.Drawing.Color.Aquamarine;
+            this.AIModeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AIModeBtn.Location = new System.Drawing.Point(640, 182);
+            this.AIModeBtn.Name = "AIModeBtn";
+            this.AIModeBtn.Size = new System.Drawing.Size(100, 45);
+            this.AIModeBtn.TabIndex = 55;
+            this.AIModeBtn.Text = "AI Mode: Easy";
+            this.AIModeBtn.UseVisualStyleBackColor = false;
+            this.AIModeBtn.Visible = false;
+            this.AIModeBtn.Click += new System.EventHandler(this.AIModeBtn_Click);
             // 
             // GameForm
             // 
@@ -1001,6 +1015,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1321, 761);
+            this.Controls.Add(this.AIModeBtn);
             this.Controls.Add(this.doAITurnBtn);
             this.Controls.Add(this.AIPlayerSavedBtn);
             this.Controls.Add(this.twoPlayerSavedBtn);
@@ -1060,7 +1075,7 @@
             this.MaximumSize = new System.Drawing.Size(1337, 800);
             this.MinimumSize = new System.Drawing.Size(1337, 800);
             this.Name = "GameForm";
-            this.Text = "Mancala Board Game";
+            this.Text = "Congkak Game";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -1124,5 +1139,6 @@
         private System.Windows.Forms.Button AIPlayerSavedBtn;
         private System.Windows.Forms.Button twoPlayerSavedBtn;
         private System.Windows.Forms.Button doAITurnBtn;
+        private System.Windows.Forms.Button AIModeBtn;
     }
 }

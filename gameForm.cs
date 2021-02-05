@@ -30,6 +30,9 @@ namespace Mancala_NEA_Computer_Science_Project
         int UserTurn;
         bool AIPlaying = false;
         bool sentFinishedData;
+        AI stringAI = new AI();
+        int AIMode = 1;
+
         public GameForm(string UserID, string Username, string AuthKey, string Wins, string Losses, string TotalScore)
         {
             try
@@ -200,6 +203,7 @@ namespace Mancala_NEA_Computer_Science_Project
             newGameBtn.Visible = true;
             playerTwoNameRTB.Text = "Player 2";
             doAITurnBtn.Visible = false;
+            AIModeBtn.Visible = false;
         }
 
         private void AIPlayerGameBtn_Click(object sender, EventArgs e)
@@ -211,6 +215,7 @@ namespace Mancala_NEA_Computer_Science_Project
             twoPlayerGameBtn.Visible = false;
             newGameBtn.Visible = true;
             doAITurnBtn.Visible = true;
+            AIModeBtn.Visible = true;
         }
         private void twoPlayerSavedBtn_Click(object sender, EventArgs e)
         {
@@ -221,6 +226,7 @@ namespace Mancala_NEA_Computer_Science_Project
             doAITurnBtn.Visible = false;
             playerTwoNameRTB.Text = "Player 2";
             AIPlaying = false;
+            AIModeBtn.Visible = false;
         }
 
         private void AIPlayerSavedBtn_Click(object sender, EventArgs e)
@@ -232,10 +238,44 @@ namespace Mancala_NEA_Computer_Science_Project
             doAITurnBtn.Visible = true;
             playerTwoNameRTB.Text = "AI Player";
             AIPlaying = true;
+            AIModeBtn.Visible = true;
         }
-        private void doAITurnBtn_Click(object sender, EventArgs e)
+        private void doAITurnBtn_ClickAsync(object sender, EventArgs e)
         {
-
+            if (UserTurn == 2)
+            {
+                string AIValue = stringAI.DoAITurn(userOnePoints.ReturnArray(), userTwoPoints.ReturnArray(), AIMode, captureFunction);
+                errorBoxRTB.Text = AIValue;
+                if (AIValue == "1")
+                {
+                    playerMoveAsync("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleOne()), 1);
+                }
+                else if (AIValue == "2")
+                {
+                    playerMoveAsync("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleTwo()), 2);
+                }
+                else if (AIValue == "3")
+                {
+                    playerMoveAsync("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleThree()), 3);
+                }
+                else if (AIValue == "4")
+                {
+                    playerMoveAsync("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleFour()), 4);
+                }
+                else if (AIValue == "5")
+                {
+                    playerMoveAsync("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleFive()), 5);
+                }
+                else if (AIValue == "6")
+                {
+                    playerMoveAsync("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleSix()), 6);
+                }
+                else if (AIValue == "7")
+                {
+                    playerMoveAsync("UserTwo", int.Parse(userTwoPoints.ReturnUserHoleSeven()), 7);
+                }
+                GameOverAsync();
+            }
         }
         private void saveGameBtn_Click(object sender, EventArgs e)
         {
@@ -301,11 +341,11 @@ namespace Mancala_NEA_Computer_Science_Project
         }
         private void NewGame() //starts new game, sets points to 0.
         {
-            //int[] scoreSetupOne = new int[] { 0, 4, 4, 4, 4, 4, 4, 4 };
-            int[] scoreSetupOne = new int[] { 0, 0, 0, 0, 0, 0, 4, 4 };
+            int[] scoreSetupOne = new int[] { 0, 7, 7, 7, 7, 7, 7, 7 };
+            //int[] scoreSetupOne = new int[] { 0, 0, 0, 0, 0, 0, 4, 4 };
             userOnePoints = new UserPoints(scoreSetupOne);
-            //int[] scoreSetupTwo = new int[] { 0, 4, 4, 4, 4, 4, 4, 4 };
-            int[] scoreSetupTwo = new int[] { 0, 0, 0, 0, 0, 0, 0, 4 };
+            int[] scoreSetupTwo = new int[] { 0, 7, 7, 7, 7, 7, 7, 7 };
+            //int[] scoreSetupTwo = new int[] { 0, 0, 0, 0, 0, 0, 0, 4 };
 
             userTwoPoints = new UserPoints(scoreSetupTwo);
             UserTurn = 1;
@@ -322,14 +362,20 @@ namespace Mancala_NEA_Computer_Science_Project
 
             var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/savegame", content);
             var RString = await result.Content.ReadAsStringAsync();
-            SerializationSaveGame deserialObj = JsonConvert.DeserializeObject<SerializationSaveGame>(RString);
-
+            SerializationSaveRes deserialObj = JsonConvert.DeserializeObject<SerializationSaveRes>(RString);
+            if(deserialObj.ApiResponse == "true")
+            {
+                errorBoxRTB.Text = "Saved successfully";
+            }
+            else
+            {
+                errorBoxRTB.Text = "An error occurred when trying to save.";
+            }
         }
         private async Task GetSavedGameAsync(string Username, string UserID, string AuthKey)
         {
             int[] UserSave;
             int[] AISave;
-            //GetUserSavedData getData = new GetUserSavedData(Username, UserID, AuthKey); //getData.
 
             SerializationGetInfo serialGetInfo = new SerializationGetInfo(Username, UserID, AuthKey);
             string jsonString = JsonConvert.SerializeObject(serialGetInfo);
@@ -639,6 +685,30 @@ namespace Mancala_NEA_Computer_Science_Project
             }
         }
 
-        
+        private void AIModeBtn_Click(object sender, EventArgs e)
+        {
+            if(AIMode == 1 || AIMode == 2)
+            {
+                AIMode++;
+                
+            }
+            else
+            {
+                AIMode = 1;
+            }
+
+            if (AIMode == 1)
+            {
+                AIModeBtn.Text = "AI Mode: Easy";
+            }
+            else if(AIMode == 2)
+            {
+                AIModeBtn.Text = "AI Mode: Medium";
+            }
+            else if(AIMode == 3)
+            {
+                AIModeBtn.Text = "AI Mode: Hard";
+            }
+        }
     }
 }
