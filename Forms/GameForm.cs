@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
 using Newtonsoft.Json;
+using Mancala_NEA_Computer_Science_Project.Forms;
 
 namespace Mancala_NEA_Computer_Science_Project
 {
@@ -284,6 +285,21 @@ namespace Mancala_NEA_Computer_Science_Project
                 SaveGameNow(Username, UserID, AuthKey);
             }
         }
+
+        private async Task GetOpenLeaderboard()
+        {
+            SerializationGetLB serialGetLB = new SerializationGetLB();
+            string jsonString = JsonConvert.SerializeObject(serialGetLB);
+            var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+            var result = await client.PostAsync("https://eu1.sunnahvpn.com:8888/api/leaderboard", content);
+            var RString = await result.Content.ReadAsStringAsync();
+            SerializationGetLB deserialObj = JsonConvert.DeserializeObject<SerializationGetLB>(RString);
+
+            LeaderboardForm leaderboardForm = new LeaderboardForm(deserialObj.userOneName, deserialObj.userOnePoints,
+                deserialObj.userTwoName, deserialObj.userTwoPoints, deserialObj.userThreeName, deserialObj.userThreePoints);
+            leaderboardForm.Show();
+        }
         private void setupUser(string Username, string Wins, string Losses, string TotalScore)
         {
             try
@@ -301,7 +317,7 @@ namespace Mancala_NEA_Computer_Science_Project
                 }
                 else
                 {
-                    winToLoss = int.Parse(Wins) / int.Parse(Losses);
+                    winToLoss = float.Parse(Wins) / float.Parse(Losses);
                 }
                 if (TotalScore == "null" || TotalScore == null || TotalScore == "0")
                 {
@@ -709,6 +725,13 @@ namespace Mancala_NEA_Computer_Science_Project
             {
                 AIModeBtn.Text = "AI Mode: Hard";
             }
+        }
+
+
+        private async void LeaderboardBtnOpen_Click(object sender, EventArgs e)
+        {
+            errorBoxRTB.Text = "OK";
+            await GetOpenLeaderboard();
         }
     }
 }

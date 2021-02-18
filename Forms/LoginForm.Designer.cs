@@ -69,11 +69,14 @@
             this.loginBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.loginBtn.BackColor = System.Drawing.Color.Transparent;
-            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.loginBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.loginBtn.FlatAppearance.BorderSize = 0;
+            this.loginBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.loginBtn.Location = new System.Drawing.Point(164, 369);
+            this.loginBtn.Location = new System.Drawing.Point(164, 366);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(275, 29);
+            this.loginBtn.Size = new System.Drawing.Size(275, 34);
             this.loginBtn.TabIndex = 2;
             this.loginBtn.UseVisualStyleBackColor = false;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
@@ -84,7 +87,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.registerBtn.BackColor = System.Drawing.Color.Transparent;
             this.registerBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.registerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.registerBtn.FlatAppearance.BorderSize = 0;
+            this.registerBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.registerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerBtn.ForeColor = System.Drawing.Color.Transparent;
             this.registerBtn.Location = new System.Drawing.Point(164, 414);
             this.registerBtn.Name = "registerBtn";

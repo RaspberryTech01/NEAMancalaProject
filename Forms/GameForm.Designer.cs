@@ -85,6 +85,7 @@
             this.twoPlayerSavedBtn = new System.Windows.Forms.Button();
             this.doAITurnBtn = new System.Windows.Forms.Button();
             this.AIModeBtn = new System.Windows.Forms.Button();
+            this.LeaderboardBtnOpen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1009,12 +1010,25 @@
             this.AIModeBtn.Visible = false;
             this.AIModeBtn.Click += new System.EventHandler(this.AIModeBtn_Click);
             // 
+            // LeaderboardBtnOpen
+            // 
+            this.LeaderboardBtnOpen.BackColor = System.Drawing.Color.Aquamarine;
+            this.LeaderboardBtnOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LeaderboardBtnOpen.Location = new System.Drawing.Point(12, 140);
+            this.LeaderboardBtnOpen.Name = "LeaderboardBtnOpen";
+            this.LeaderboardBtnOpen.Size = new System.Drawing.Size(100, 36);
+            this.LeaderboardBtnOpen.TabIndex = 57;
+            this.LeaderboardBtnOpen.Text = "Leaderboard";
+            this.LeaderboardBtnOpen.UseVisualStyleBackColor = false;
+            this.LeaderboardBtnOpen.Click += new System.EventHandler(this.LeaderboardBtnOpen_Click);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1321, 761);
+            this.Controls.Add(this.LeaderboardBtnOpen);
             this.Controls.Add(this.AIModeBtn);
             this.Controls.Add(this.doAITurnBtn);
             this.Controls.Add(this.AIPlayerSavedBtn);
@@ -1140,5 +1154,6 @@
         private System.Windows.Forms.Button twoPlayerSavedBtn;
         private System.Windows.Forms.Button doAITurnBtn;
         private System.Windows.Forms.Button AIModeBtn;
+        private System.Windows.Forms.Button LeaderboardBtnOpen;
     }
 }

@@ -93,17 +93,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameForm.cs">
+    <Compile Include="Forms\GameForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameForm.Designer.cs">
+    <Compile Include="Forms\GameForm.Designer.cs">
       <DependentUpon>GameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LeaderboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LeaderboardForm.Designer.cs">
+      <DependentUpon>LeaderboardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,24 +118,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RulesForm.cs">
+    <Compile Include="Forms\RulesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RulesForm.Designer.cs">
+    <Compile Include="Forms\RulesForm.Designer.cs">
       <DependentUpon>RulesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SerializationAuth.cs" />
-    <Compile Include="SerializationSaveRes.cs" />
-    <Compile Include="SerializationSaveGame.cs" />
-    <Compile Include="SerializationGetInfo.cs" />
-    <Compile Include="SerializationResponse.cs" />
-    <Compile Include="SerializationUpdateData.cs" />
+    <Compile Include="Serialization\SerializationAuth.cs" />
+    <Compile Include="Serialization\SerializationGetLB.cs" />
+    <Compile Include="Serialization\SerializationSaveRes.cs" />
+    <Compile Include="Serialization\SerializationSaveGame.cs" />
+    <Compile Include="Serialization\SerializationGetInfo.cs" />
+    <Compile Include="Serialization\SerializationResponse.cs" />
+    <Compile Include="Serialization\SerializationUpdateData.cs" />
     <Compile Include="UserInfoSplit.cs" />
     <Compile Include="UserPoints.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\LeaderboardForm.resx">
+      <DependentUpon>LeaderboardForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="gameForm.resx">
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\gameForm.resx">
       <DependentUpon>GameForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -137,7 +147,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="RulesForm.resx">
+    <EmbeddedResource Include="Forms\RulesForm.resx">
       <DependentUpon>RulesForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -158,6 +168,7 @@
     <None Include="Resources\rulesGameForm.png" />
     <None Include="Resources\gameFormBoard.png" />
     <Content Include="Resources\gameFormBoard.svg" />
+    <Content Include="Resources\Leaderboard.png" />
     <Content Include="Resources\login.png" />
     <Content Include="Resources\mancalaButton.png" />
     <Content Include="Resources\rockBlue.png" />

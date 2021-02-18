@@ -12,10 +12,5 @@ namespace Mancala_NEA_Computer_Science_Project
         public string losses { get; set; }
         public string totalScore { get; set; }
         public string userGameID { get; set; }
-        public SerializationResponse()
-        {
-            //this.username = username;
-            //this.password = password;
-        }
-    }
+            }
 }

@@ -28,8 +28,6 @@ namespace Mancala_NEA_Computer_Science_Project
 
         private async void loginBtn_Click(object sender, EventArgs e)
         {
-            //GameForm gameForm = new GameForm();
-            //gameForm.Show();
             try
             {
                 string usernameLogin = usernameInputField.Text;
