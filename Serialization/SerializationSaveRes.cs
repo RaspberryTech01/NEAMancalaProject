@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class SerializationSaveRes
+public class SerializationSaveRes //Response from saving game
 {
-	public string ApiResponse { get; set; }
+	public string ApiResponse { get; set; } //Response from backend
 
 	public SerializationSaveRes()
 	{

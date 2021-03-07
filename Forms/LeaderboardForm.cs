@@ -12,35 +12,35 @@ namespace Mancala_NEA_Computer_Science_Project.Forms
 {
     public partial class LeaderboardForm : Form
     {
-        string userOneName = "";
-        string userTwoName = "";
-        string userThreeName = "";
-        string userOnePoints = "";
-        string userTwoPoints = "";
-        string userThreePoints = "";
+        string userOneName = ""; //user one name
+        string userTwoName = ""; //user two name
+        string userThreeName = ""; //user three name
+        string userOnePoints = ""; //user one's points
+        string userTwoPoints = ""; //user two's points
+        string userThreePoints = ""; //user three's points
         public LeaderboardForm(string userOneName, string userOnePoints, string userTwoName, 
             string userTwoPoints, string userThreeName, string userThreePoints)
-        {
-            this.userOneName = userOneName;
+        { //constructor
+            this.userOneName = userOneName; //setting of variables
             this.userOnePoints = userOnePoints;
             this.userTwoName = userTwoName;
             this.userTwoPoints = userTwoPoints;
             this.userThreeName = userThreeName;
             this.userThreePoints = userThreePoints;
-            InitializeComponent();
-            setupBoard();
+            InitializeComponent(); //creation of form
+            setupBoard(); //setting up board
         }
 
-        private void setupBoard()
+        private void setupBoard() //adding placeholders
         {
-            playerOneNamesRTB.Text = userOneName;
+            playerOneNamesRTB.Text = userOneName; //setting text to variables
             playerOnePointsRTB.Text = userOnePoints;
             playerTwoNameRTB.Text = userTwoName;
             playerTwoPointsRTB.Text = userTwoPoints;
             playerThreeNameRTB.Text = userThreeName;
             playerThreePointsRTB.Text = userThreePoints;
         }
-        private void playerOneNameRTB_TextChanged(object sender, EventArgs e)
+        private void playerOneNameRTB_TextChanged(object sender, EventArgs e) //just a test button to quickly access code
         {
 
         }

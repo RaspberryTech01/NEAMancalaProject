@@ -8,20 +8,20 @@ namespace Mancala_NEA_Computer_Science_Project
 {
     class UserInfoSplit
     {
-        private int[] arrayAfterSplit;
-        public UserInfoSplit(string strToBeSplit)
+        private int[] arrayAfterSplit; //holds array of integer shells
+        public UserInfoSplit(string strToBeSplit) //constructor
         {
             this.arrayAfterSplit = SplitStringIntoArray(strToBeSplit);
         }
 
-        private int[] SplitStringIntoArray(string strToBeSplit)
+        private int[] SplitStringIntoArray(string strToBeSplit) //splits string into integer array
         {
-            int[] arrayAfterSplit = strToBeSplit.Split(',').Select(int.Parse).ToArray();
+            int[] arrayAfterSplit = strToBeSplit.Split(',').Select(int.Parse).ToArray(); //splits at comma
             return arrayAfterSplit;
         }
         public int[] SendSplit()
         {
-            return this.arrayAfterSplit;
+            return this.arrayAfterSplit; //returns back the array
         }
     }
 }

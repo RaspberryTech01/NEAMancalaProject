@@ -49,7 +49,7 @@
             this.playerOneNamesRTB.ReadOnly = true;
             this.playerOneNamesRTB.Size = new System.Drawing.Size(183, 24);
             this.playerOneNamesRTB.TabIndex = 11;
-            this.playerOneNamesRTB.Text = "f";
+            this.playerOneNamesRTB.Text = "";
             this.playerOneNamesRTB.TextChanged += new System.EventHandler(this.playerOneNameRTB_TextChanged);
             // 
             // playerOnePointsRTB

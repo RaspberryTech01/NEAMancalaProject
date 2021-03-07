@@ -25,39 +25,39 @@ public class UserPoints
 
         }
 	}
-	public string ReturnUserBank()
+	public string ReturnUserBank() //returns back user bank
 	{
 		return UserScores[0].ToString();
 	}
-	public string ReturnUserHoleOne()
-    {
+	public string ReturnUserHoleOne() //returns back user hole
+	{
 		return UserScores[1].ToString();
     }
-	public string ReturnUserHoleTwo()
+	public string ReturnUserHoleTwo() //returns back user hole
 	{
 		return UserScores[2].ToString();
 	}
-	public string ReturnUserHoleThree()
+	public string ReturnUserHoleThree()//returns back user hole
 	{
 		return UserScores[3].ToString();
 	}
-	public string ReturnUserHoleFour()
+	public string ReturnUserHoleFour() //returns back user hole
 	{
 		return UserScores[4].ToString();
 	}
-	public string ReturnUserHoleFive()
+	public string ReturnUserHoleFive() //returns back user hole
 	{
 		return UserScores[5].ToString();
 	}
-	public string ReturnUserHoleSix()
+	public string ReturnUserHoleSix()//returns back user hole
 	{
 		return UserScores[6].ToString();
 	}
-	public string ReturnUserHoleSeven()
+	public string ReturnUserHoleSeven() //returns back user hole
 	{
 		return UserScores[7].ToString();
 	}
-	public string ReturnUserHole(int holeNum)
+	public string ReturnUserHole(int holeNum) //returns back user hole based on integer
 	{
 		return UserScores[holeNum].ToString();
 	}
@@ -67,7 +67,7 @@ public class UserPoints
 		{
 			UserScores[0] = UserScores[0] + 1;
 		}
-		else if (holeNum == 0 && UserMove == "UserTwo")
+		else if (holeNum == 0 && UserMove == "UserTwo") 
         {
 			UserScores[0] = UserScores[0] + 1;
 		}

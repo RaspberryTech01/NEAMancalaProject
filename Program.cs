@@ -18,7 +18,7 @@ namespace Mancala_NEA_Computer_Science_Project
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Create a new form1 on startup
-            Form1 form1 = new Form1();
+            Form1 form1 = new Form1(); //another name for LoginForm
             Application.Run(new Form1());
             
         }
